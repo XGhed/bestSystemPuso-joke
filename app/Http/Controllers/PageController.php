@@ -12,6 +12,12 @@ use App\Http\Requests;
 
 class PageController extends Controller
 {
+
+    public function Homepage(Request $request){
+
+       return view('Homepage')
+    }
+    
     public function addMember(Request $request){
 
     	$member = new Member();
