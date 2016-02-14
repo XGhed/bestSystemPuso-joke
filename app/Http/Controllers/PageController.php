@@ -13,9 +13,29 @@ use App\Http\Requests;
 class PageController extends Controller
 {
 
-    public function Homepage(Request $request){
+    public function homepage(Request $request){
 
-       return view('Homepage')
+       return view('homepage');
+    }
+
+    public function manageItems(Request $request){
+
+       return view('items');
+    }
+
+    public function maintenance(Request $request){
+
+       return view('maintenance');
+    }
+
+    public function supplies(Request $request){
+
+       return view('supplies');
+    }
+
+    public function users(Request $request){
+
+       return view('users');
     }
     
     public function addMember(Request $request){
