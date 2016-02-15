@@ -22,6 +22,16 @@ Route::post('/addMember', 'PageController@addMember');
 
 Route::get('/insertMember', 'PageController@insertMember');
 
+Route::get('/home', 'PageController@homepage');
+
+Route::get('/manageItems', 'PageController@manageItems');
+
+Route::get('/maintenance', 'PageController@maintenance');
+
+Route::get('/supplies', 'PageController@supplies');
+
+Route::get('/users', 'PageController@users');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
