@@ -20,7 +20,7 @@ Maintenance
 
 @section('Maintenance-body')
 
-
+@yield('try')
 <!-- Page Layout here -->
     <div class="row">
 
@@ -105,14 +105,17 @@ Maintenance
         
 <div class = "container" style = "float: top;">
 @yield('Supplies')
+
+
 </div>
 
 
 
-      </div>
+</div>
 
-    </div>
 
+
+</div>
 
 
 

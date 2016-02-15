@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('Items');
+    return view('Maintenance');
 });
 
 /*NOTE: PINAPALITAN KO LANG UNG LAMAN NG view('laman') PARA MAKITA KO. HAHA. TAENA*/
