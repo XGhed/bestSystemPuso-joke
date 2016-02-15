@@ -2664,7 +2664,7 @@ ul li {
 .divider {
   height: 1px;
   overflow: hidden;
-  background-color: #e0e0e0;
+  background-color: #000000;
 }
 
 blockquote {
@@ -2797,7 +2797,7 @@ video.responsive-video {
 .parallax-container {
   position: relative;
   overflow: hidden;
-  height: 650px;
+  height: 550px;
 }
 
 .parallax {
@@ -8524,7 +8524,6 @@ a.waves-effect .waves-ripple {
   display: none;
   border-bottom: 1px solid #ddd;
   box-sizing: border-box;
-
 }
 
 .collapsible-body p {
@@ -8556,6 +8555,7 @@ a.waves-effect .waves-ripple {
 .side-nav .collapsible-body {
   border: 0;
   background-color: #fff;
+
 }
 
 .side-nav .collapsible-body li a {

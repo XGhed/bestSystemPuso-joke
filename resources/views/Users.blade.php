@@ -3,10 +3,10 @@
 
 @section('Supplies')
 
-<center><h4 style="position:relative; bottom:16em;">Users</h4></center>
+<center><h4><img src="icons/maintenance_Accounts.png" class = "circle" style = "position: relative; top: 5px; height:65px; width: 75px;">Users</h4></center>
 
 
-<div class = "container" style="position:relative; bottom:35em;">
+<div class = "container">
 <div class="row">
     <form class="col s12">
       <div class="row">

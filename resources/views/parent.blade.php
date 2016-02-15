@@ -38,12 +38,12 @@
 
       
   <!-- FOOTER -->
-  <div class= "page-footer">
-  <div class="section grey darken-2 ">
-    <div class="row container">
-      <h2 class="header">Contact Us</h2>
+  <div class= "page-footer footer-copyright">
+  <div class="section grey darken-2">
+    <div class="container">
+      <h5 class="header">Contact Us</h5>
       <p>Call us: +639 26 735 4975</p>
-      <p>Email: BestSystemSanaTo@yahoo.com</p>
+      <p>Email: GwapoMuming@yahoo.com</p>
       <p>Site: jan lang sa tabi tabi</p>
     </div>
     </div>

@@ -1,3 +1,19 @@
 .bembem{
 	background-color: #5fddfe;
 }
+
+.side-nav-ming {
+  position: fixed;
+  width: 240px;
+  left: -105%;
+  top: 5em;
+  margin: 0;
+  height: 100%;
+  height: calc(40% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #FF5252;
+  z-index: 999;
+  overflow-y: auto;
+  will-change: left;
+}

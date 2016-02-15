@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>#BestSystem</title>
+    <title>#PusoSystem</title>
       <!--CSS-->
       <link type="text/css" rel="stylesheet" href="{!!URL::asset('css/materialize.css')!!}"/>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
