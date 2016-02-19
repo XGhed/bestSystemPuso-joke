@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('Items');
+    return view('schedule');
 });
 
 /*NOTE: PINAPALITAN KO LANG UNG LAMAN NG view('laman') PARA MAKITA KO. HAHA. TAENA*/
@@ -24,14 +24,11 @@ Route::get('/insertMember', 'PageController@insertMember');
 
 Route::get('/home', 'PageController@homepage');
 
-Route::get('/manageItems', 'PageController@manageItems');
+Route::get('/items', 'PageController@manageItems');
 
-Route::get('/maintenance', 'PageController@maintenance');
+Route::post('/dashboard', 'PageController@dashboard');
 
-Route::get('/supplies', 'PageController@supplies');
-
-Route::get('/users', 'PageController@users');
-
+Route::post('/supplier', 'PageController@supplier');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -27,12 +27,13 @@
 
       <div class = "container">
         <center>@yield('Maintenance-title')</center>
+        <center>@yield('title')</center>
       </div>
 
 
       @yield('Maintenance-body')
 
-
+      @yield('adminPage')
 
 
 
