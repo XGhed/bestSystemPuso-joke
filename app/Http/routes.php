@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('schedule');
+    return view('adminParent');
 });
 
 /*NOTE: PINAPALITAN KO LANG UNG LAMAN NG view('laman') PARA MAKITA KO. HAHA. TAENA*/
@@ -26,9 +26,9 @@ Route::get('/home', 'PageController@homepage');
 
 Route::get('/items', 'PageController@manageItems');
 
-Route::post('/dashboard', 'PageController@dashboard');
+Route::get('/supplier', 'PageController@manageSuppliers');
 
-Route::post('/supplier', 'PageController@supplier');
+Route::get('/accounts', 'PageController@manageAccounts');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

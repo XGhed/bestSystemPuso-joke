@@ -23,16 +23,15 @@ class PageController extends Controller
        return view('items');
     }
 
-
-    public function dashboard(Request $request){
-
-       return view('dashboard');
-    }
-
-    public function supplier(Request $request){
+    public function manageSuppliers(Request $request){
 
        return view('supplier');
     }  
+
+    public function manageAccounts(Request $request){
+
+       return view('accounts');
+    }     
 
     public function addMember(Request $request){
 

@@ -2,202 +2,250 @@
 
 
 @section('title')
-Manage Accounts
+Manage Supplier
+@endsection
+
+@section('title1')
+<h1 class="center">Manage Accounts</h1>
 @endsection
 
 
-@section('accounts')
-<script>
-	
-	$(document).ready(function() {
-    $('select').material_select();
-  });
-
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
-  });
-      
-</script>
-<center><h1><i class="medium material-icons">account_circle</i>Accounts</h1></center>
-<br>
-<br>
-<br>
+@section('supplier')
 
 
-<div class="col s4">
-<form action="#">
-    <p>
-      <input name="group1" type="radio" id="test1" />
-      <label for="test1">Edit Account</label>
-    </p>
-    <p>
-      <input name="group1" type="radio" id="test2" />
-      <label for="test2">Add Account</label>
-    </p>   
+<!-- SEARCH -->
+<br>
+<br>
+<div class="row">
+<div class="col s8">
+<form>
+<div class="input-field col s3">
+    <select>
+      <option value="" disabled selected>Filter</option>
+      <option value="1">Name</option>
+      <option value="2">Address</option>
+      <option value="3">Contact Number</option>
+      <option value="3">Email Address</option>
+    </select>
+    <label>Search By</label> <!-- BASAHIN MO TO. SEARCH O FILTER?-->
+  </div>
+
+        <div class="input-field col s6">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
 </form>
 </div>
 
-<div class="col s4 push-s2">
- <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose account</option>
-      <option value="1">Account1</option>
-      <option value="2">Account2</option>
-      <option value="3">Account3</option>
-    </select>
-    <label>Select Account</label>
-  </div>
-</div>
+<div class="col s4">
+<!-- MODAL TRIGGER-->
+  <a class="modal-trigger waves-effect waves-light btn green z-depth-5 left" href="#modal1">Add Supplier</a>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!--  -->
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Add Supplier</h4>
 
-<div class="section">
-  	<center><h3>Account Info</h3></center>
-  </div>
-<div class="divider"></div>
-<br>
-<br>
+   <!-- LINYA LANG--><div class="divider"></div><!-- LINYA LANG-->
 
-
-<div class="row">
+    <!-- MODAL BODY -->
+        <div class="row">
     <form class="col s12">
-    <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="#00063" id="first_name" type="text" class="validate" disabled>  
-          <label for="first_name">Bidder Number</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Full name" id="first_name" type="text" class="validate">
-          <label for="Supplier_name">Full Name</label>
-       		</div>
-        </div>
-         <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="City" id="first_name" type="text" class="validate">
-          <label for="first_name">City</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="State/Province/Region" id="first_name" type="text" class="validate">
-          <label for="first_name">State/Province/Region</label>
-        </div>
-      </div>
-		<div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Street" id="first_name" type="text" class="validate">
-          <label for="first_name">Street</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Zipcode" id="first_name" type="text" class="validate">
-          <label for="first_name">Zipcode</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Email Number" id="first_name" type="text" class="validate">
-          <label for="first_name">Contact Number</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Email" id="first_name" type="text" class="validate">
-          <label for="first_name">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-            <select>
-              <option value="" disabled selected>Choose account Type</option>
-              <option value="1">AccountType1</option>
-              <option value="2">AccountType2</option>
-              <option value="3">AccountType3</option>
-            </select>
-            <label>Select Account</label>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col s6">
-        <label for="Birthdate">Birthdate</label>
-          <input type="date" class="datepicker">
-        </div>
-      </div>
-      <p></p>
-      <div>
-      <p>
-      <input type="checkbox" id="test8" />
-      <label for="test8">Provided necessary requirements</label>
-    </p>
+            <div class="row">
+                <div class="input-field col s8">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Supplier's Name</label>
+                </div>
+            </div>
 
-     <p>
-      <input type="checkbox" id="test8" />
-      <label for="test8">Agreed to terms & requirements</label>
-    </p>
-    </div>
+            <div class="row">
+                <div class="input-field col s3">
+                  <select>
+                    <option value="" disabled selected>Province</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Province</label>
+                </div>
+
+                <div class="input-field col s2">
+                  <select>
+                    <option value="" disabled selected>Zip Code</option>
+                    <option value="1">Code1</option>
+                    <option value="2">Code2</option>
+                    <option value="3">Code3</option>
+                  </select>
+                  <label>Postal Code</label>
+                </div>
+
+                <div class="input-field col s3">
+                  <select>
+                    <option value="" disabled selected>City</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>City/Municipality</label>
+                </div>
+
+                <div class="input-field col s2">
+                  <select>
+                    <option value="" disabled selected>Barangay</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Barangay</label>
+                </div>
+
+                <div class="input-field col s2">
+                  <select>
+                    <option value="" disabled selected>Street</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Street</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Contact Number</label>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s8">
+                  <input id="last_name" type="email" class="validate">
+                  <label for="last_name">Email Address</label>
+              </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="modal-footer">
+              <button class="btn waves-effect waves-light green darken-2 white-text" type="submit" name="action">
+              <i class="material-icons right">add</i>Add Supplier</button>
+          
+        </div>
     </form>
+  
 
-    <button class="btn blue waves-effect waves-light right" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-  </div>
+          <script>
+          //MODAL
+          $('.modal-trigger').leanModal({
+              dismissible: true, // Modal can be dismissed by clicking outside of the modal
+              opacity: .5, // Opacity of modal background
+              in_duration: 300, // Transition in duration
+              out_duration: 200, // Transition out duration
+            }
+          );
 
-<!-- -->
-
-
-<div class="section">
-  	<center><h3>List of Accounts</h3></center>
-  </div>
-<div class="divider"></div>
-<table>
+          //SELECT FORM
+          $(document).ready(function() {
+            $('select').material_select();
+          });
+          
+          </script>
+        </div> <!--MODAL BODY-->
+</div>  
+</div>
+    
+        <!-- DATA TABLE -->
+        <table class="highlight responsive-table">
         <thead>
           <tr>
-              <th data-field="id">Account ID</th>
-              <th data-field="id">Customer's name</th>
-              <th data-field="name">Customer's address</th>
-              <th data-field="name">Contact number</th>
-              <th data-field="name">Email address</th>
-              <th data-field="id">Account type</th>
+              <th data-field="id"></th>
+              <th data-field="id"></th>
+              <th data-field="id">Name</th>
+              <th data-field="name">Address</th>
+              <th data-field="price">Contact number</th>
+              <th data-field="price">Email Address</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td>001</td>          
-            <td>Alvin</td>
-            <td>Jan sa tabi</td>
+          <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Delete"><i class="material-icons">delete</i></a>
+            </td>
+            <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="material-icons">edit</i></a>
+            </td>
+            <td>Muming Company Inc.</td>
+            <td>Laguna, San Pedro, Brgy. San Vicente Wednesday Street</td>
             <td>+639 26 735 4975</td>
-            <td>Alvin@yahoo.com</td>
-            <td>End-user</td>
+            <td>Muming_jerome@yahoo.com</td>
           </tr>
+
           <tr>
-            <td>002</td>
-            <td>Alan</td>
-            <td>Jan sa kanto</td>
-            <td>505 432 5431</td>
-            <td>gwapo@yahoo.com</td>
-            <td>Retailer</td>
+            <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Delete"><i class="material-icons">delete</i></a>
+            </td>
+            <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="material-icons">edit</i></a>
+            </td>
+            <td>Muming Company Inc.</td>
+            <td>Laguna, San Pedro, Brgy. San Vicente Wednesday Street</td>
+            <td>+639 26 735 4975</td>
+            <td>Muming_jerome@yahoo.com</td>
           </tr>
+
           <tr>
-            <td>069</td>
-            <td>Jonathan</td>
-            <td>CR ng 5th south</td>
-            <td>0929 233 4681</td>
-            <td>panget@yahoo.com</td>
-            <td>Retailer</td>
+          <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Delete"><i class="material-icons">delete</i></a>
+            </td>
+            <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="material-icons">edit</i></a>
+            </td>
+            <td>Muming Company Inc.</td>
+            <td>Laguna, San Pedro, Brgy. San Vicente Wednesday Street</td>
+            <td>+639 26 735 4975</td>
+            <td>Muming_jerome@yahoo.com</td>
+          </tr>
+
+          <tr>
+          <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Delete"><i class="material-icons">delete</i></a>
+            </td>
+            <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="material-icons">edit</i></a>
+            </td>
+            <td>Wassup Company Inc.</td>
+            <td>Metro Manila, Muntinlupa, Brgy. Tunasan 2nd Street</td>
+            <td>808 751 8427</td>
+            <td>boom@gmail.com</td>
+          </tr>
+
+          <tr>
+          <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Delete"><i class="material-icons">delete</i></a>
+            </td>
+            <td>
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-5 tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="material-icons">edit</i></a>
+            </td>
+            <td>Coca-cola Manufacturing company</td>
+            <td>Metro Manila, Pasay City, Brgy. 504,  Wednesday Street</td>
+            <td>09 29 233 4681</td>
+            <td>Pepsi@rocketmail.com</td>
           </tr>
         </tbody>
       </table>
 
+    <!-- hindi pa functtioning wala pang database-->
+      <center><ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="active"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul></center>
+           </div> 
 @endsection
