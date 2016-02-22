@@ -60,14 +60,14 @@ Manage Supplier
     <form class="col s12" action="/insertSupplier" method="POST">
             <div class="row">
                 <div class="input-field col s8">
-                  <input id="supplier_name" type="text" class="validate" name="name">
+                  <input id="supplier_name" type="text" class="validate" name="add_name">
                   <label for="supplier_name">Supplier's Name</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s3">
-                  <select name="province">
+                  <select name="add_province">
                     <option value="" disabled selected>Province</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -77,7 +77,7 @@ Manage Supplier
                 </div>
 
                 <div class="input-field col s3">
-                  <select name="city">
+                  <select name="add_city">
                     <option value="" disabled selected>City</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -87,7 +87,7 @@ Manage Supplier
                 </div>
 
                 <div class="input-field col s3">
-                  <select name="barangay">
+                  <select name="add_barangay">
                     <option value="" disabled selected>Barangay</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -97,7 +97,7 @@ Manage Supplier
                 </div>
 
                 <div class="input-field col s3">
-                  <select name="street">
+                  <select name="add_street">
                     <option value="" disabled selected>Street</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -109,14 +109,14 @@ Manage Supplier
 
             <div class="row">
                 <div class="input-field col s8">
-                  <input id="contact_num" type="text" class="validate" name="contactNo">
+                  <input id="contact_num" type="text" class="validate" name="add_contactNo">
                   <label for="contact_num">Contact Number</label>
                 </div>
             </div>
 
             <div class="row">
               <div class="input-field col s8">
-                  <input id="eAddress" type="email" class="validate" name="email">
+                  <input id="eAddress" type="email" class="validate" name="add_email">
                   <label for="eAddress">Email Address</label>
               </div>
             </div>
@@ -145,12 +145,13 @@ Manage Supplier
 
         <tbody>
         <form action="#">
+          <input type="hidden" name="hid_key">
           @foreach($results as $key => $result)
             <tr>
               <td>
                 <p>
-                  <input name="group1" type="radio" id="test1" value="{{$result->SupplierID}}"/>
-                  <label for="test1"></label>
+                  <input name="group1" type="radio" id="test{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
+                  <label for="test{{$key}}"></label>
                 </p>
               </td>
               <td>{{$result->SupplierName}}</td>
@@ -159,31 +160,6 @@ Manage Supplier
               <td>{{$result->SupplierEmail}}</td>
             </tr>
           @endforeach
-          <tr>
-              <td>
-                <p>
-                  <input name="group1" type="radio" id="test1" />
-                  <label for="test1"></label>
-                </p>
-              </td>
-              <td>Muming Company Inc.</td>
-              <td>Laguna, San Pedro, Brgy. San Vicente Wednesday Street</td>
-              <td>+639 26 735 4975</td>
-              <td>Muming_jerome@yahoo.com</td>
-          </tr>
-
-          <tr>
-              <td>
-                <p>
-                  <input name="group1" type="radio" id="test2" />
-                  <label for="test2"></label>
-                </p>
-              </td>
-              <td>Wassup Company Inc.</td>
-            <td>Metro Manila, Muntinlupa, Brgy. Tunasan 2nd Street</td>
-            <td>808 751 8427</td>
-            <td>boom@gmail.com</td>
-          </tr>
             </form>
         </tbody>
       </table>
@@ -201,18 +177,19 @@ Manage Supplier
 
       
           <div class="row">
-          <form class="col s12">
+          <form class="col s12" action="/updateSupplier" method="POST">
+              <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->SupplierID : 'None'}}">
               <div class="row">
                   <div class="input-field col s8">
-                    <input id="supplier_name" type="text" class="validate">
+                    <input id="supplier_name" type="text" class="validate" name="edit_name" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->SupplierName : 'None'}}">
                     <label for="supplier_name">Supplier's Name</label>
                   </div>
               </div>
 
               <div class="row">
                   <div class="input-field col s3">
-                    <select>
-                      <option value="" disabled selected>Province</option>
+                    <select name="edit_province">
+                      <option value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Province_Address : 'None'}}" selected>{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Province_Address : 'None'}}</option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
                       <option value="3">Option 3</option>
@@ -221,8 +198,8 @@ Manage Supplier
                   </div>
 
                   <div class="input-field col s3">
-                    <select>
-                      <option value="" disabled selected>City</option>
+                    <select name="edit_city">
+                      <option value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->City_Address : 'None'}}" selected>{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->City_Address : 'None'}}</option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
                       <option value="3">Option 3</option>
@@ -231,8 +208,8 @@ Manage Supplier
                   </div>
 
                   <div class="input-field col s3">
-                    <select>
-                      <option value="" disabled selected>Barangay</option>
+                    <select name="edit_barangay">
+                      <option value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Barangay_Address : 'None'}}" selected>{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Barangay_Address : 'None'}}</option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
                       <option value="3">Option 3</option>
@@ -241,8 +218,8 @@ Manage Supplier
                   </div>
 
                   <div class="input-field col s3">
-                    <select>
-                      <option value="" disabled selected>Street</option>
+                    <select name="edit_street">
+                      <option value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Street_Address : 'None'}}" selected>{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Street_Address : 'None'}}</option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
                       <option value="3">Option 3</option>
@@ -253,14 +230,14 @@ Manage Supplier
 
               <div class="row">
                   <div class="input-field col s8">
-                    <input id="contact_num" type="text" class="validate">
+                    <input id="contact_num" type="text" class="validate" name="edit_contactNo" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->SupplierContactNo : 'None'}}">
                     <label for="contact_num">Contact Number</label>
                   </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s8">
-                    <input id="eAddress" type="email" class="validate">
+                    <input id="eAddress" type="email" class="validate" name="edit_email" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->SupplierEmail : 'None'}}">
                     <label for="eAddress">Email Address</label>
                 </div>
               </div>
@@ -306,4 +283,13 @@ Manage Supplier
         </div> 
 
       </div>
+
+      <script>
+        function myJavascriptFunction(keyVal) { 
+          //var keyVal = document.querySelector('input[name="group1"]:checked').value;
+          var javascriptVariable = keyVal;
+          window.location.href = "supplier?keyID=" + javascriptVariable; 
+        }
+      </script>
+      <?php if (isset($_GET['keyID'])) echo "<script>$('#modal1').openModal();</script>";?>
 @endsection

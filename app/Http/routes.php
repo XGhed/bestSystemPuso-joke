@@ -20,6 +20,10 @@ Route::get('/', function () {
 
 Route::post('/insertSupplier', 'SupplierController@insertSupplier');
 
+Route::post('/updateSupplier', 'SupplierController@updateSupplier');
+
+
+
 Route::post('/addMember', 'PageController@addMember');
 
 Route::get('/insertMember', 'PageController@insertMember');

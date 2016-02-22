@@ -24,13 +24,29 @@ class SupplierController extends Controller
 
 		$supplier = new App\Supplier;
 
-		$supplier->SupplierName = $request->input('name');
-		$supplier->Province_Address = $request->input('province');
-		$supplier->City_Address = $request->input('city');
-		$supplier->Barangay_Address = $request->input('barangay');
-		$supplier->Street_Address = $request->input('street');
-		$supplier->SupplierContactNo = $request->input('contactNo');
-		$supplier->SupplierEmail = $request->input('email');
+		$supplier->SupplierName = $request->input('add_name');
+		$supplier->Province_Address = $request->input('add_province');
+		$supplier->City_Address = $request->input('add_city');
+		$supplier->Barangay_Address = $request->input('add_barangay');
+		$supplier->Street_Address = $request->input('add_street');
+		$supplier->SupplierContactNo = $request->input('add_contactNo');
+		$supplier->SupplierEmail = $request->input('add_email');
+
+		$supplier->save();
+	}
+
+	public function updateSupplier(Request $request){
+
+		$supplier = new App\Supplier;
+		$supplier = App\Supplier::find($request->input('edit_ID'));
+
+		$supplier->SupplierName = $request->input('edit_name');
+		$supplier->Province_Address = $request->input('edit_province');
+		$supplier->City_Address = $request->input('edit_city');
+		$supplier->Barangay_Address = $request->input('edit_barangay');
+		$supplier->Street_Address = $request->input('edit_street');
+		$supplier->SupplierContactNo = $request->input('edit_contactNo');
+		$supplier->SupplierEmail = $request->input('edit_email');
 
 		$supplier->save();
 	}
