@@ -23,11 +23,6 @@ class PageController extends Controller
        return view('items');
     }
 
-    public function manageSuppliers(Request $request){
-
-       return view('supplier');
-    }  
-
     public function manageAccounts(Request $request){
 
        return view('accounts');

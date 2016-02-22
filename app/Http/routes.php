@@ -18,6 +18,8 @@ Route::get('/', function () {
 /*NOTE: PINAPALITAN KO LANG UNG LAMAN NG view('laman') PARA MAKITA KO. HAHA. TAENA*/
 
 
+Route::post('/insertSupplier', 'SupplierController@insertSupplier');
+
 Route::post('/addMember', 'PageController@addMember');
 
 Route::get('/insertMember', 'PageController@insertMember');
@@ -26,7 +28,7 @@ Route::get('/home', 'PageController@homepage');
 
 Route::get('/items', 'PageController@manageItems');
 
-Route::get('/supplier', 'PageController@manageSuppliers');
+Route::get('/supplier', 'SupplierController@manageSuppliers');
 
 Route::get('/accounts', 'PageController@manageAccounts');
 /*

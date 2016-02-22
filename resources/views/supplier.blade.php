@@ -57,17 +57,17 @@ Manage Supplier
 
     
         <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="/insertSupplier" method="POST">
             <div class="row">
                 <div class="input-field col s8">
-                  <input id="supplier_name" type="text" class="validate">
+                  <input id="supplier_name" type="text" class="validate" name="name">
                   <label for="supplier_name">Supplier's Name</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s3">
-                  <select>
+                  <select name="province">
                     <option value="" disabled selected>Province</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -77,7 +77,7 @@ Manage Supplier
                 </div>
 
                 <div class="input-field col s3">
-                  <select>
+                  <select name="city">
                     <option value="" disabled selected>City</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -87,7 +87,7 @@ Manage Supplier
                 </div>
 
                 <div class="input-field col s3">
-                  <select>
+                  <select name="barangay">
                     <option value="" disabled selected>Barangay</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -97,7 +97,7 @@ Manage Supplier
                 </div>
 
                 <div class="input-field col s3">
-                  <select>
+                  <select name="street">
                     <option value="" disabled selected>Street</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
@@ -109,14 +109,14 @@ Manage Supplier
 
             <div class="row">
                 <div class="input-field col s8">
-                  <input id="contact_num" type="text" class="validate">
+                  <input id="contact_num" type="text" class="validate" name="contactNo">
                   <label for="contact_num">Contact Number</label>
                 </div>
             </div>
 
             <div class="row">
               <div class="input-field col s8">
-                  <input id="eAddress" type="email" class="validate">
+                  <input id="eAddress" type="email" class="validate" name="email">
                   <label for="eAddress">Email Address</label>
               </div>
             </div>
@@ -145,6 +145,20 @@ Manage Supplier
 
         <tbody>
         <form action="#">
+          @foreach($results as $key => $result)
+            <tr>
+              <td>
+                <p>
+                  <input name="group1" type="radio" id="test1" value="{{$result->SupplierID}}"/>
+                  <label for="test1"></label>
+                </p>
+              </td>
+              <td>{{$result->SupplierName}}</td>
+              <td>{{$result->Province_Address}}</td>
+              <td>{{$result->SupplierContactNo}}</td>
+              <td>{{$result->SupplierEmail}}</td>
+            </tr>
+          @endforeach
           <tr>
               <td>
                 <p>
@@ -170,33 +184,7 @@ Manage Supplier
             <td>808 751 8427</td>
             <td>boom@gmail.com</td>
           </tr>
-
-          <tr>
-              <td>
-                <p>
-                  <input name="group1" type="radio" id="test3" />
-                  <label for="test3"></label>
-                </p>
-              </td>
-            <td>Coca-cola Manufacturing company</td>
-            <td>Metro Manila, Pasay City, Brgy. 504,  Wednesday Street</td>
-            <td>09 29 233 4681</td>
-            <td>Pepsi@rocketmail.com</td>
-          </tr>
-
-          <tr>
-              <td>
-                <p>
-                  <input name="group1" type="radio" id="test4" />
-                  <label for="test4"></label>
-                </p>
-              </td>
-            <td>Coca-cola Manufacturing company</td>
-            <td>Metro Manila, Pasay City, Brgy. 504,  Wednesday Street</td>
-            <td>09 29 233 4681</td>
-            <td>Pepsi@rocketmail.com</td>
             </form>
-          </tr>
         </tbody>
       </table>
 <!-- ***************************************************EDIT**************************************-->

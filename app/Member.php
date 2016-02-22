@@ -8,6 +8,7 @@ use App\Dal\MemberDao;
 use App\Member;
 
 	class Member{
+		
 		public $firstName;
 		public $lastName;
 		public $middleName;
