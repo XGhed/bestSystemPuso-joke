@@ -15,33 +15,6 @@ Manage Subcategory
 <br>
 
 <div class="row">
-<!--*************************************************** ADDCATEGORY **************************************-->
-	<!-- <div class="col s4">
-		
-			  <a class="modal-trigger waves-effect waves-light btn" href="#modal1"><i class="material-icons left">add</i>Add Subcategory</a>
-
-			 
-			  <div id="modal1" class="modal modal-fixed-footer">
-			    <div class="modal-content">
-			      <h4><i class="medium material-icons left">dns</i>Add Subcategory</h4>
-			      			<div class="divider"></div>
-			        <div class="row">
-					    <form class="col s12">
-						    <div class="row">
-						       	<div class="input-field col s5">
-						        	<input id="category" type="text" class="validate">
-						         	<label for="category">Category</label>
-						        </div>
-						    </div>
-					    </form>
-					</div>
-			    </div>
-			    <div class="modal-footer">
-			      <a href="#!" class="modal-action modal-close waves-effect waves-green btn "><i class="material-icons left">done</i>Confirm</a>
-			    </div>
-			  </div>
-	</div>
-<!--***************************************************END ADDCATEGORY **************************************-->
 
 <!--***************************************************ADD SUBCATEGORY **************************************-->
 	<div class="col s4">
@@ -140,15 +113,35 @@ Manage Subcategory
 		      <h4><i class="medium material-icons left">edit</i>Edit</h4>
 		      							<div class="divider"></div>
 		      	<form>
-		     		<div class="row">
-							    <div class="row">
-							    <!--LOOP MO NA LANG KUNG ILAN UNG SUB CAT NIYA-->
-							       	<div class="input-field col s5">
-							        	<input id="category" type="text" class="validate">
-							         	<label for="category">Subcategory</label>
-							        </div>
-							    </div>
-					</div>
+		      		
+			     		<div class="row">
+			     			<div class="input-field col s6 pull-s1">
+							    <select>
+							      <option value="" disabled selected>Choose Category</option>
+							      <option value="1">Category1</option>
+							      <option value="2">Category2</option>
+							      <option value="3">Category3</option>
+							    </select>
+							    <label>Category</label>
+							  </div>
+						</div>
+							
+						<div class="row">
+							<div class="input-field col s6 push-s1">
+							    <select>
+							      <option value="" disabled selected>Choose Subcategory</option>
+							      <option value="1">SubCategory1</option>
+							      <option value="2">SubCategory2</option>
+							      <option value="3">SubCategory3</option>
+							    </select>
+							    <label>Subcategory</label>
+							</div>
+						</div>
+
+						<div class="input-field col s6">
+				          <input id="new_sub" type="text" class="validate">
+				          <label for="new_sub">New Subcategory</label>
+				        </div>
 		    </div>
 
 

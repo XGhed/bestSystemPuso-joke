@@ -11,7 +11,7 @@ Manage Supplier
   <?php
     if (isset($message)){
       if($message != null && $message == '1')
-        echo "<p style='color:green;'>Add Successfull!</p>";
+        echo "<script>Materialize.toast('ADDED SUCCESSFULLY!', 10000)</script>";
       elseif($message != null && $message == '2')
         echo "<p style='color:green;'>Edit Successfull!</p>";
       elseif($message != null && $message == '3')
