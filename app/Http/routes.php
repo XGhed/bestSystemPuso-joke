@@ -31,6 +31,8 @@ Route::get('/items', 'PageController@manageItems');
 
 Route::get('/supplier', 'SupplierController@manageSuppliers');
 
+Route::get('/category', 'PageController@manageCategory');
+
 Route::get('/accounts', 'PageController@manageAccounts');
 /*
 |--------------------------------------------------------------------------

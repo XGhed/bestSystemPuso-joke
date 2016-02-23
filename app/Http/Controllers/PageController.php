@@ -26,7 +26,12 @@ class PageController extends Controller
     public function manageAccounts(Request $request){
 
        return view('accounts');
-    }     
+    }    
+
+    public function manageCategory(Request $request){
+
+       return view('category');
+    } 
 
     public function addMember(Request $request){
 

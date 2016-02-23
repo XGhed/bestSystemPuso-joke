@@ -30,17 +30,17 @@
               <a class="collapsible-header">Maintenance<i class="mdi-navigation-arrow-drop-down right"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="/supplier">Supplier</a></li>
-                  <li><a href="/accounts"class="active">Accounts</a></li>
-                  <li><a href="#!">Third</a></li>
-                  <li><a href="#!">Fourth</a></li>
+                  <li><a  href="/supplier">Supplier</a></li>
+                  <li><a  href="/">Accounts</a></li>
+                  <li><a  href="/category" >Category</a></li>
+                  <li><a  href="#!">Fourth</a></li>
                 </ul>
               </div>
             </li>
           </ul>
         </li>       
         <li><a href="#!">Transaction</a></li>
-        <li><a href="#!">Log out</a></li>
+        <li><a class="right" href="#!">Log out</a></li>
       </ul>
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     
@@ -60,6 +60,7 @@
     <div class="col s10 push-s1 white hoverable" style="height: 100%;">
     @yield('supplier')
     @yield('accounts')
+    @yield('category')
     </div>
     </div>
     </div>

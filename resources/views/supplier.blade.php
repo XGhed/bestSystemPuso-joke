@@ -6,7 +6,7 @@ Manage Supplier
 @endsection
 
 @section('title1')
-<h1 class="center">Manage Supplier</h1>
+<h1 class="left col s3 push-s1">Manage Supplier</h1>
 @endsection
 
 
