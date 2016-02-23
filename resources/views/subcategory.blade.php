@@ -58,8 +58,12 @@ Manage Subcategory
 					      	<div class="row">
 						        <div class="input-field col s7">
 								    <select>
-								      <option value="" disabled selected>Choose your Category</option>
-								      <option value="1">Category1</option>
+								    	<option value="" disabled selected>Choose your Category</option>
+								    	@foreach($results as $key => $result)
+	            							<option value="{{$result->CategoryID}}">{{$result->CategoryName}}</option>
+         								@endforeach
+								      
+								      
 								      <option value="2">Category2</option>
 								      <option value="3">Category3</option>
 								    </select>

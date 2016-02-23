@@ -115,9 +115,9 @@ Manage Category
 
 		    <div class="modal-footer">
 		    	<button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="edit">
-                	<i class="material-icons left">done</i>Change</button></form>
+                	<i class="material-icons left">done</i>Change</button>
                 <button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="delete">
-                	<i class="material-icons left">done</i>Delete</button></form>
+                	<i class="material-icons left">done</i>Delete</button>
 		    </div>
 		    </form>
 		  </div>
