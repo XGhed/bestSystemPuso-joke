@@ -28,6 +28,11 @@ class PageController extends Controller
        return view('category');
     } 
 
+    public function manageSubcategory(Request $request){
+
+       return view('subcategory');
+    } 
+
     public function manageItem(Request $request){
 
        return view('item');

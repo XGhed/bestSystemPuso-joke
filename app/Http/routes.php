@@ -35,6 +35,8 @@ Route::get('/registerItem', 'PageController@regItems');
 
 Route::get('/category', 'PageController@manageCategory');
 
+Route::get('/subcategory', 'PageController@manageSubcategory');
+
 Route::get('/accounts', 'PageController@manageAccounts');
 /*
 |--------------------------------------------------------------------------

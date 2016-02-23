@@ -16,6 +16,7 @@ Register Items
 <br>
 <br>
 <div class="row">
+<div class="col s8">
   <a class="modal-trigger waves-effect waves-light btn" href="#addBtn"><i class="material-icons left">add</i>Add Items</a>
 
   <div id="addBtn" class="modal modal-fixed-footer">
@@ -89,6 +90,21 @@ Register Items
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn "><i class="material-icons left">done</i>Confirm</a>
     </div>
   </div>
+  </div>
+
+  <div class="col s4">
+      <form>
+        <div class="input-field col s12">
+          <select>
+            <option disabled selected>Filter</option>
+            <option value="1">ID</option>
+            <option value="2">Category</option>
+            <option value="3">Name</option>
+          </select>
+            <label>Filter By</label> <!-- BASAHIN MO TO. SEARCH O FILTER?-->
+        </div>
+      </form>
+    </div>
 </div>
 
 

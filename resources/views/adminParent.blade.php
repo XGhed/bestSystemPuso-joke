@@ -33,6 +33,7 @@
                 <ul>
                   <li><a class="white-text" href="/supplier">Supplier</a></li>
                   <li><a class="white-text" href="/category" >Category</a></li>
+                  <li><a class="white-text" href="/subcategory" >Subcategory</a></li>
                   <li><a class="white-text" href="/item">Item</a></li>
                   <div class="divider"></div>
                 </ul>
@@ -63,6 +64,7 @@
         @yield('supplier')
         @yield('accounts')
         @yield('category')
+        @yield('subcategory')
         @yield('items')
         @yield('regItems')
     </div>
