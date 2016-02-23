@@ -31,7 +31,7 @@
               <div class="collapsible-body">
                 <ul>
                   <li><a href="/supplier">Supplier</a></li>
-                  <li><a href="/accounts">Accounts</a></li>
+                  <li><a href="/accounts"class="active">Accounts</a></li>
                   <li><a href="#!">Third</a></li>
                   <li><a href="#!">Fourth</a></li>
                 </ul>
@@ -59,6 +59,7 @@
     @yield('title1')
     <div class="col s10 push-s1 white hoverable" style="height: 100%;">
     @yield('supplier')
+    @yield('accounts')
     </div>
     </div>
     </div>

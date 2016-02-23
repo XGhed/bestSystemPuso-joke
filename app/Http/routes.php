@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('adminParent');
 });
 
-/*NOTE: PINAPALITAN KO LANG UNG LAMAN NG view('laman') PARA MAKITA KO. HAHA. TAENA*/
 
 
 Route::post('/insertSupplier', 'SupplierController@insertSupplier');

@@ -149,10 +149,8 @@ Manage Supplier
           @foreach($results as $key => $result)
             <tr>
               <td>
-                <p>
-                  <input name="group1" type="radio" id="test{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
-                  <label for="test{{$key}}"></label>
-                </p>
+                  <input type="radio" id="test{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
+                  <label for="test{{$key}}" class="left">Edit</label>
               </td>
               <td>{{$result->SupplierName}}</td>
               <td>{{$result->Province_Address}}</td>
@@ -164,18 +162,12 @@ Manage Supplier
         </tbody>
       </table>
 <!-- ***************************************************EDIT**************************************-->
-      <div class="row">
-        <div class="col s3">
-          <a class="modal-trigger waves-effect waves-light btn z-depth-5 right" href="#modal1"><i class="material-icons right">edit</i>Edit</a>
-        
+
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
       <div class="modal-content">
         <h4><i class="medium material-icons left">edit</i>Edit</h4>
-
      <!-- LINYA LANG--><div class="divider"></div><!-- LINYA LANG-->
-
-      
           <div class="row">
           <form class="col s12" action="/updateSupplier" method="POST">
               <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->SupplierID : 'None'}}">
@@ -245,8 +237,12 @@ Manage Supplier
           </div> <!--*************************** MODAL CONTENT ***************************-->
 
           <div class="modal-footer">
-                <button class="btn waves-effect waves-light green darken-2 white-text right" type="submit" name="action">
-                <i class="material-icons left">done</i>Confirm</button>
+                <button class="btn waves-effect waves-light green darken-2 white-text col s2" type="submit" name="action">
+                <i class="material-icons left">edit</i>Change</button>
+
+                <button class="btn waves-effect waves-light z-depth-5 col s2" type="submit" name="action">Delete
+            <i class="material-icons left">delete</i>
+          </button>
           </div>
       </form>
             <script>
@@ -262,12 +258,6 @@ Manage Supplier
           </div> <!--MODAL BODY-->
       </div>
 
-        <div class="col s3">
-          <button class="btn waves-effect waves-light z-depth-5 left" data-target="modal1" type="submit" name="action">Delete
-            <i class="material-icons right">delete</i>
-          </button>
-        </div>
-      
 
     <!-- hindi pa functtioning wala pang database-->
         <div class="center">
