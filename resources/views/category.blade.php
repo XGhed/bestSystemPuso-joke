@@ -93,9 +93,7 @@ Manage Category
     <!--*************************************************** END PAGINATION **************************************--> 
     
     <!--*************************************************** EDIT ************************************************-->
-    	
-		<a class="modal-trigger waves-effect waves-light btn" href="#modal3">EDIT MODAL //LIPAT MO NA LANG SA RADIO</a>
-		  
+    			  
 		  <div id="modal3" class="modal modal-fixed-footer">
 		    <div class="modal-content">
 		      <h4><i class="medium material-icons left">edit</i>Edit</h4>
