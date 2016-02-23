@@ -21,12 +21,14 @@ Route::post('/confirmSupplier', 'SupplierController@confirmSupplier');
 
 Route::post('/confirmCategory', 'CategoryController@confirmCategory');
 
+Route::post('/confirmSubCategory', 'SubCategoryController@confirmSubCategory');
+
 
 Route::get('/supplier', 'SupplierController@manageSupplier');
 
 Route::get('/category', 'CategoryController@manageCategory');
 
-Route::get('/subcategory', 'PageController@manageSubcategory');
+Route::get('/subcategory', 'SubCategoryController@manageSubcategory');
 
 
 

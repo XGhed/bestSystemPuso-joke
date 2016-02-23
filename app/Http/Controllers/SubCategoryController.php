@@ -2,36 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\SubCategory;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App;
 
 class SubCategoryController extends Controller
 {
     public function manageSubCategory(){
 
-       $results = App\SubCategory::all();
-
+       $results = App\Category::all();
        return view('subcategory')->with ('results', $results);
     }
 
     public function confirmSubCategory(Request $request){
 
 		if (isset($_POST['add'])) {
-			$this->insertCategory($request);
+			$this->insertSubCategory($request);
 			$results = App\Category::all();
-			return view('category')->with ('results', $results)->with ('message', '1');
+			return view('subcategory')->with ('results', $results)->with ('message', '1');
 		}
 		elseif (isset($_POST['edit'])) {
-	        $this->updateCategory($request);
+	        $this->updateSubCategory($request);
 	        $results = App\Category::all();
-			return view('category')->with ('results', $results)->with ('message', '2');
+			return view('subcategory')->with ('results', $results)->with ('message', '2');
 	    }
 	    elseif (isset($_POST['delete'])) {
-	        $this->deleteCategory($request);
+	        $this->deleteSubCategory($request);
 	        $results = App\Category::all();
-			return view('category')->with ('results', $results)->with ('message', '3');
+			return view('subcategory')->with ('results', $results)->with ('message', '3');
 	    }
     }
+
+    public function insertSubCategory(Request $request){
+
+		$subCategory = new App\SubCategory;
+
+		$subCategory->CategoryID = $request->input('add_ID');
+		$subCategory->SubCategoryName = $request->input('add_name');
+
+		try {
+			$subCategory->save();
+		} catch (Exception $e) {
+			return view('subCategory')->with ('results', $results)->with ('message', '-1');
+		}
+	}
 }
