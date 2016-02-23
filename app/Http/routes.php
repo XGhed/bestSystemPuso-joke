@@ -21,7 +21,13 @@ Route::post('/confirmSupplier', 'SupplierController@confirmSupplier');
 
 Route::post('/confirmCategory', 'CategoryController@confirmCategory');
 
+
+Route::get('/supplier', 'SupplierController@manageSupplier');
+
 Route::get('/category', 'CategoryController@manageCategory');
+
+Route::get('/subcategory', 'PageController@manageSubcategory');
+
 
 
 
@@ -34,15 +40,13 @@ Route::get('/home', 'PageController@homepage');
 Route::get('/item', 'PageController@manageItem');
 
 
-Route::get('/supplier', 'SupplierController@manageSuppliers');
 
 Route::get('/registerItem', 'PageController@regItems');
 
 Route::get('/bidEvent', 'PageController@bidEvent');
 
-Route::get('/category', 'PageController@manageCategory');
 
-Route::get('/subcategory', 'PageController@manageSubcategory');
+
 
 Route::get('/accounts', 'PageController@manageAccounts');
 /*
