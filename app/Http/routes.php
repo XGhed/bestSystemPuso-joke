@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 
 
-Route::post('/insertSupplier', 'SupplierController@insertSupplier');
-
-Route::post('/updateSupplier', 'SupplierController@updateSupplier');
+Route::post('/confirmSupplier', 'SupplierController@confirmSupplier');
 
 
 

@@ -57,7 +57,7 @@ Manage Supplier
 
     
         <div class="row">
-    <form class="col s12" action="/insertSupplier" method="POST">
+    <form class="col s12" action="/confirmSupplier" method="POST">
             <div class="row">
                 <div class="input-field col s8">
                   <input id="supplier_name" type="text" class="validate" name="add_name">
@@ -124,7 +124,7 @@ Manage Supplier
         </div> <!--*************************** MODAL CONTENT ***************************-->
 
         <div class="modal-footer">
-              <button class="btn waves-effect waves-light green darken-2 white-text" type="submit" name="action">
+              <button class="btn waves-effect waves-light green darken-2 white-text" type="submit" name="add">
               <i class="material-icons left">add</i>Add Supplier</button>
         </div>
     </form>  
@@ -169,7 +169,7 @@ Manage Supplier
         <h4><i class="medium material-icons left">edit</i>Edit</h4>
      <!-- LINYA LANG--><div class="divider"></div><!-- LINYA LANG-->
           <div class="row">
-          <form class="col s12" action="/updateSupplier" method="POST">
+          <form class="col s12" action="/confirmSupplier" method="POST">
               <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->SupplierID : 'None'}}">
               <div class="row">
                   <div class="input-field col s8">
@@ -237,10 +237,10 @@ Manage Supplier
           </div> <!--*************************** MODAL CONTENT ***************************-->
 
           <div class="modal-footer">
-                <button class="btn waves-effect waves-light green darken-2 white-text col s2" type="submit" name="action">
+                <button class="btn waves-effect waves-light green darken-2 white-text col s2" type="submit" name="edit">
                 <i class="material-icons left">edit</i>Change</button>
 
-                <button class="btn waves-effect waves-light z-depth-5 col s2" type="submit" name="action">Delete
+                <button class="btn waves-effect waves-light z-depth-5 col s2" type="submit" name="delete">Delete
             <i class="material-icons left">delete</i>
           </button>
           </div>

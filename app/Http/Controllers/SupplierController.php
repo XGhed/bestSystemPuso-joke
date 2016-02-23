@@ -13,12 +13,26 @@ use App;
 
 class SupplierController extends Controller
 {
-	public function manageSuppliers(Request $request){
+	public function manageSuppliers(){
 
        $results = App\Supplier::all();
 
        return view('supplier')->with ('results', $results);
-    }  
+    }
+
+    public function confirmSupplier(Request $request){
+
+		if (isset($_POST['add'])) {
+			$this->insertSupplier($request);
+		}
+		elseif (isset($_POST['edit'])) {
+	        $this->updateSupplier($request);
+	    }
+	    elseif (isset($_POST['delete'])) {
+	        $this->deleteSupplier($request);
+	    }
+	    return redirect('/supplier');
+    }    
 
 	public function insertSupplier(Request $request){
 
@@ -52,6 +66,9 @@ class SupplierController extends Controller
 	}
 
 	public function deleteSupplier(Request $request){
-
+		$supplier = new App\Supplier;
+		$supplier = App\Supplier::find($request->input('edit_ID'));
+		
+		$supplier->delete();
 	}
 }
