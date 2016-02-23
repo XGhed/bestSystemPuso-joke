@@ -13,7 +13,7 @@ use App;
 
 class SupplierController extends Controller
 {
-	public function manageSuppliers(){
+    public function manageSupplier(){
 
        $results = App\Supplier::all();
 
@@ -24,14 +24,19 @@ class SupplierController extends Controller
 
 		if (isset($_POST['add'])) {
 			$this->insertSupplier($request);
+			$results = App\Supplier::all();
+			return view('supplier')->with ('results', $results)->with ('message', '1');
 		}
 		elseif (isset($_POST['edit'])) {
 	        $this->updateSupplier($request);
+	        $results = App\Supplier::all();
+			return view('supplier')->with ('results', $results)->with ('message', '2');
 	    }
 	    elseif (isset($_POST['delete'])) {
 	        $this->deleteSupplier($request);
+	        $results = App\Supplier::all();
+			return view('supplier')->with ('results', $results)->with ('message', '3');
 	    }
-	    return redirect('/supplier');
     }    
 
 	public function insertSupplier(Request $request){
@@ -46,7 +51,11 @@ class SupplierController extends Controller
 		$supplier->SupplierContactNo = $request->input('add_contactNo');
 		$supplier->SupplierEmail = $request->input('add_email');
 
-		$supplier->save();
+		try {
+			$supplier->save();
+		} catch (Exception $e) {
+			return view('supplier')->with ('results', $results)->with ('message', '-1');
+		}
 	}
 
 	public function updateSupplier(Request $request){
@@ -62,13 +71,21 @@ class SupplierController extends Controller
 		$supplier->SupplierContactNo = $request->input('edit_contactNo');
 		$supplier->SupplierEmail = $request->input('edit_email');
 
-		$supplier->save();
+		try {
+			$supplier->save();
+		} catch (Exception $e) {
+			return view('supplier')->with ('results', $results)->with ('message', '-1');
+		}
 	}
 
 	public function deleteSupplier(Request $request){
 		$supplier = new App\Supplier;
 		$supplier = App\Supplier::find($request->input('edit_ID'));
 		
-		$supplier->delete();
+		try {
+			$supplier->delete();
+		} catch (Exception $e) {
+			return view('supplier')->with ('results', $results)->with ('message', '-1');
+		}
 	}
 }
