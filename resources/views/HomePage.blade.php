@@ -28,12 +28,12 @@
                       <form class="col s12">
                         <div class="row" style="border-bottom: 1px solid gray">
                           <div class="input-field col s10">
-                            <input placeholder="Email Address" id="first_name" type="text" class="validate">
+                            <input placeholder="Email Address" id="email" type="email" class="validate">
                           </div>
                         </div>
                         <div class="row" style="border-bottom: 1px solid gray">
                           <div class="input-field col s10">
-                            <input placeholder="Password" id="first_name" type="password" class="validate">
+                            <input placeholder="Password" id="password" type="password" class="validate">
                           </div>
                         </div>
                       </form>

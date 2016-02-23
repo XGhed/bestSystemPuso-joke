@@ -33,20 +33,7 @@ Manage Supplier
 <br>
 
 <div class="row">
-    <div class="col s8">
-      <form>
-        <div class="input-field col s3">
-          <select>
-            <option disabled selected>Filter</option>
-            <option value="1">Name</option>
-            <option value="2">Address</option>
-            <option value="3">Contact Number</option>
-            <option value="3">Email Address</option>
-          </select>
-            <label>Filter By</label> <!-- BASAHIN MO TO. SEARCH O FILTER?-->
-        </div>
-      </form>
-    </div>
+    
 
 <!--*************************** SEARCH ***************************
         <div class="input-field col s6">
@@ -60,7 +47,7 @@ Manage Supplier
 
 
 <!--***************************ADD BUTTON***************************-->
-<div class="col s4">
+<div class="col s8">
 <!-- MODAL TRIGGER-->
   <a class="modal-trigger waves-effect waves-light btn z-depth-5 left" href="#addBtn"><i class="material-icons left">add</i>Add Supplier</a>
 
@@ -145,8 +132,24 @@ Manage Supplier
         </div>
     </form>  
         </div> <!--MODAL BODY-->
+
 </div>
-      
+
+      <div class="col s4">
+      <form>
+        <div class="input-field col s12">
+          <select>
+            <option disabled selected>Filter</option>
+            <option value="1">Name</option>
+            <option value="2">Address</option>
+            <option value="3">Contact Number</option>
+            <option value="3">Email Address</option>
+          </select>
+            <label>Filter By</label> <!-- BASAHIN MO TO. SEARCH O FILTER?-->
+        </div>
+      </form>
+    </div>
+
 <div>
 
         <!-- DATA TABLE -->

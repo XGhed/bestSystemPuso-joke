@@ -2,28 +2,28 @@
 
 
 @section('title')
-Manage Category
+Manage Subcategory
 @endsection
 
 @section('title1')
-<h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Category</h2>
+<h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Subcategory</h2>
 @endsection
 
 
-@section('category')
+@section('subcategory')
 <br>
 <br>
 
 <div class="row">
 <!--*************************************************** ADDCATEGORY **************************************-->
-	<div class="col s8">
-		 <!-- Modal Trigger -->
-			  <a class="modal-trigger waves-effect waves-light btn z-depth-5 left" href="#modal1"><i class="material-icons left">add</i>Add Category</a>
+	<!-- <div class="col s4">
+		
+			  <a class="modal-trigger waves-effect waves-light btn" href="#modal1"><i class="material-icons left">add</i>Add Subcategory</a>
 
-			  <!-- Modal Structure -->
+			 
 			  <div id="modal1" class="modal modal-fixed-footer">
 			    <div class="modal-content">
-			      <h4><i class="medium material-icons left">dns</i>Add Category</h4>
+			      <h4><i class="medium material-icons left">dns</i>Add Subcategory</h4>
 			      			<div class="divider"></div>
 			        <div class="row">
 					    <form class="col s12">
@@ -41,9 +41,47 @@ Manage Category
 			    </div>
 			  </div>
 	</div>
-<!--*************************************************** END ADDCATEGORY **************************************-->
+<!--***************************************************END ADDCATEGORY **************************************-->
 
+<!--***************************************************ADD SUBCATEGORY **************************************-->
+	<div class="col s4">
+		 <!-- Modal Trigger -->
+			  <a class="modal-trigger waves-effect waves-light btn" href="#modal2"><i class="material-icons left">add</i>Add Subcategory</a>
 
+			  <!-- Modal Structure -->
+			  <div id="modal2" class="modal modal-fixed-footer">
+			    <div class="modal-content">
+			      <h4><i class="medium material-icons left">dns</i>Add Subcategory</h4>
+			      			<div class="divider"></div>
+			      	<div class="row">
+					    <form class="col s12">		
+					      	<div class="row">
+						        <div class="input-field col s7">
+								    <select>
+								      <option value="" disabled selected>Choose your Category</option>
+								      <option value="1">Category1</option>
+								      <option value="2">Category2</option>
+								      <option value="3">Category3</option>
+								    </select>
+								  </div>
+							 </div>
+
+							<div class="row">
+							    <div class="input-field col s6">
+							        <input id="category" type="text" class="validate">
+							        <label for="category">Name of Subcategory</label>
+							    </div>
+							</div> 
+						 </form>
+					</div>
+			    </div>
+			    <div class="modal-footer">
+			      <a href="#!" class="modal-action modal-close waves-effect waves-green btn"><i class="material-icons left">done</i>Confirm</a>
+			    </div>
+			  </div>
+	</div>
+
+	<!--***************************************************END SUBCATEGORY **************************************-->
 </div>
 
 
@@ -115,13 +153,13 @@ Manage Category
 		      <h4><i class="medium material-icons left">edit</i>Edit</h4>
 		      							<div class="divider"></div>
 		     		<div class="row">
-					    <form class="col s12">
-						    <div class="row">
-						       	<div class="input-field col s5">
-						        	<input id="category" type="text" class="validate">
-						         	<label for="category">Category</label>
-						        </div>
-						    </div>
+							    <div class="row">
+							    <!--LOOP MO NA LANG KUNG ILAN UNG SUB CAT NIYA-->
+							       	<div class="input-field col s5">
+							        	<input id="category" type="text" class="validate">
+							         	<label for="category">Subcategory</label>
+							        </div>
+							    </div>
 					    </form>
 					</div>
 		    </div>
@@ -133,7 +171,7 @@ Manage Category
 		    </div>
 		  </div>
     <!--*************************************************** END EDIT ************************************************-->  
-
+      
 			<script>
 
 			//MODAL
