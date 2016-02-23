@@ -7,6 +7,22 @@ Manage Supplier
 
 @section('title1')
 <h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Supplier</h1>
+
+  <?php
+    if (isset($message)){
+      if($message != null && $message == '1')
+        echo "<p style='color:green;'>Add Successfull!</p>";
+      elseif($message != null && $message == '2')
+        echo "<p style='color:green;'>Edit Successfull!</p>";
+      elseif($message != null && $message == '3')
+        echo "<p style='color:green;'>Delete Successfull!</p>";
+      elseif($message != null && $message == '-1')
+        echo "<p style='color:red;'>Error!</p>";
+    }
+  ?>
+
+  
+
 @endsection
 
 
