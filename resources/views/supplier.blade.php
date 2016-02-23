@@ -166,7 +166,6 @@ Manage Supplier
 
         <tbody>
         <form action="#">
-          <input type="hidden" name="hid_key">
           @foreach($results as $key => $result)
             <tr>
               <td>
