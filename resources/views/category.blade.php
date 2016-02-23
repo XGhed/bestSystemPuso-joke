@@ -179,7 +179,8 @@ Manage Category
 		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn"><i class="medium material-icons left">delete</i>Delete</a>
 		    </div>
 		  </div>
-    <!--*************************************************** END EDIT ************************************************-->    
+    <!--*************************************************** END EDIT ************************************************-->  
+      
 			<script>
 
 			//MODAL

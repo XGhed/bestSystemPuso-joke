@@ -31,6 +31,11 @@ class PageController extends Controller
     public function manageItem(Request $request){
 
        return view('item');
+    }
+
+    public function regItems(Request $request){
+
+       return view('regItems');
     } 
 
     public function addMember(Request $request){

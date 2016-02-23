@@ -34,14 +34,14 @@
                   <li><a class="white-text" href="/supplier">Supplier</a></li>
                   <li><a class="white-text" href="/category" >Category</a></li>
                   <li><a class="white-text" href="/item">Item</a></li>
-                  <li><a class="white-text" href="#!">Reports</a></li>
                   <div class="divider"></div>
                 </ul>
               </div>
             </li>
           </ul>
         </li>       
-        <li><a class="white-text" href="#!">Transaction</a></li>
+        <li><a class="white-text" href="/registerItem">Register Items</a></li>
+        <li><a class="white-text" href="#!">Reports</a></li>
         <li><a class="right white-text" href="#!">Log out</a></li>
       </ul>
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="large mdi-navigation-menu"></i></a>
@@ -64,6 +64,7 @@
         @yield('accounts')
         @yield('category')
         @yield('items')
+        @yield('regItems')
     </div>
     </div>
     </div>
