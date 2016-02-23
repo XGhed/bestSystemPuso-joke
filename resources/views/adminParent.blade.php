@@ -42,6 +42,7 @@
           </ul>
         </li>       
         <li><a class="white-text" href="/registerItem">Register Items</a></li>
+        <li><a class="white-text" href="/bidEvent">Bidding Event</a></li>
         <li><a class="white-text" href="#!">Reports</a></li>
         <li><a class="right white-text" href="#!">Log out</a></li>
       </ul>
@@ -67,6 +68,7 @@
         @yield('subcategory')
         @yield('items')
         @yield('regItems')
+        @yield('bidEvent')
     </div>
     </div>
     </div>

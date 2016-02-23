@@ -33,6 +33,11 @@ class PageController extends Controller
        return view('subcategory');
     } 
 
+    public function bidEvent(Request $request){
+
+       return view('bid_event');
+    } 
+
     public function manageItem(Request $request){
 
        return view('item');

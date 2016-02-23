@@ -33,6 +33,8 @@ Route::get('/supplier', 'SupplierController@manageSuppliers');
 
 Route::get('/registerItem', 'PageController@regItems');
 
+Route::get('/bidEvent', 'PageController@bidEvent');
+
 Route::get('/category', 'PageController@manageCategory');
 
 Route::get('/subcategory', 'PageController@manageSubcategory');
