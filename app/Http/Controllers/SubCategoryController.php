@@ -48,4 +48,18 @@ class SubCategoryController extends Controller
 			return view('subCategory')->with ('results', $results)->with ('message', '-1');
 		}
 	}
+
+	public function updateSubCategory(Request $request){
+
+		$subcategory = new App\SubCategory;
+		$subcategory = App\SubCategory::find($request->input('edit_old_subcat'));
+
+		$subcategory->SubCategoryName = $request->input('edit_new_subcat');
+
+		try {
+			$subcategory->save();
+		} catch (Exception $e) {
+			return view('subcategory')->with ('results', $results)->with ('message', '-1');
+		}
+	}
 }

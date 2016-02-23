@@ -73,7 +73,7 @@ Manage Subcategory
         	@foreach($results as $key => $result)
 				<tr>
 					<td>
-		          		<input name="group1" type="radio" id="test{{$key}}" value="" onclick=""/>
+		          		<input name="group1" type="radio" id="test{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value)"/>
 		                <label for="test{{$key}}" class="left">Edit</label>
 		            </td>
 		            <td>{{$result->CategoryName}}</td>
@@ -112,35 +112,34 @@ Manage Subcategory
 		    <div class="modal-content">
 		      <h4><i class="medium material-icons left">edit</i>Edit</h4>
 		      							<div class="divider"></div>
-		      	<form>
+		      	<form action="/confirmSubCategory" method="POST">
 		      		
 			     		<div class="row">
 			     			<div class="input-field col s6 pull-s1">
-							    <select>
-							      <option value="" disabled selected>Choose Category</option>
-							      <option value="1">Category1</option>
-							      <option value="2">Category2</option>
-							      <option value="3">Category3</option>
-							    </select>
-							    <label>Category</label>
+							    <input id="new_cat" type="text" class="validate" readonly name="edit_old_cat" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->CategoryName : 'None'}}">
+				          		<label for="new_cat">Category</label>
 							  </div>
 						</div>
 							
 						<div class="row">
 							<div class="input-field col s6 push-s1">
-							    <select>
-							      <option value="" disabled selected>Choose Subcategory</option>
-							      <option value="1">SubCategory1</option>
-							      <option value="2">SubCategory2</option>
-							      <option value="3">SubCategory3</option>
+							    <select id="edit_old_subcat" name="edit_old_subcat" onchange="updateEditText();">
+							      <option disabled selected>Choose Subcategory</option>
+							    	<?php
+							    		if (isset ($_GET['keyID'])){
+							    			foreach ($results[$_GET['keyID']]->subCategory as $key => $result) {
+							    				echo "<option id='sub_ID$key' value='$result->SubCategoryID'>$result->SubCategoryName</option>";
+							    			}
+							    		}
+							    	?>
 							    </select>
 							    <label>Subcategory</label>
 							</div>
 						</div>
 
 						<div class="input-field col s6">
-				          <input id="new_sub" type="text" class="validate">
-				          <label for="new_sub">New Subcategory</label>
+				          <input id="edit_new_sub" type="text" class="validate" name="edit_new_subcat">
+				          <label for="edit_new_sub">New Subcategory</label>
 				        </div>
 		    </div>
 
@@ -170,7 +169,12 @@ Manage Subcategory
 	        function myJavascriptFunction(keyVal) { 
 	          //var keyVal = document.querySelector('input[name="group1"]:checked').value;
 	          var javascriptVariable = keyVal;
-	          window.location.href = "category?keyID=" + javascriptVariable; 
+	          window.location.href = "subcategory?keyID=" + javascriptVariable; 
+	        }
+	        function updateEditText(){
+	        	var oldcat = document.getElementById('edit_old_subcat').value;
+
+	        	//document.getElementById('edit_new_subcat').value = oldcat;
 	        }
 	      	</script>
 	      	<?php if (isset($_GET['keyID'])) echo "<script>$('#modal3').openModal();</script>";?>
