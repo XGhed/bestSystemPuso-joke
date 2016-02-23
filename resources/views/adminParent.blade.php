@@ -11,15 +11,15 @@
       <script type="text/javascript" src="js/materialize.min.js"></script>
     </head>
 
-<body style="background-color: #64ffda">
+<body style="background-color: #212121">
 
 <div class="row">
  <!--*******************SIDE NAVIGATOR PANEL********************************************* -->
 
 
-      <ul id="slide-out" class="side-nav fixed teal accent-3">
+      <ul id="slide-out" class="side-nav fixed grey darken-3">
                 <!-- admin info-->
-              <div class="teal accent-3">
+              <div class="grey darken-3">
               <center> <img class="circle responsive-img z-depth-3" src="icons/1x1.jpg"></center>
               <center> Hello Sir!</center>
               </div>
@@ -27,27 +27,29 @@
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a class="collapsible-header">Maintenance<i class="mdi-navigation-arrow-drop-down right"></i></a>
+              <a class="white-text collapsible-header">Maintenance<i class="mdi-navigation-arrow-drop-down right"></i></a>
               <div class="collapsible-body">
+                  <div class="divider"></div>
                 <ul>
-                  <li><a  href="/supplier">Supplier</a></li>
-                  <li><a  href="/">Accounts</a></li>
-                  <li><a  href="/category" >Category</a></li>
-                  <li><a  href="#!">Fourth</a></li>
+                  <li><a class="white-text" href="/supplier">Supplier</a></li>
+                  <li><a class="white-text" href="/category" >Category</a></li>
+                  <li><a class="white-text" href="/item">Item</a></li>
+                  <li><a class="white-text" href="#!">Reports</a></li>
+                  <div class="divider"></div>
                 </ul>
               </div>
             </li>
           </ul>
         </li>       
-        <li><a href="#!">Transaction</a></li>
-        <li><a class="right" href="#!">Log out</a></li>
+        <li><a class="white-text" href="#!">Transaction</a></li>
+        <li><a class="right white-text" href="#!">Log out</a></li>
       </ul>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="large mdi-navigation-menu"></i></a>
     
 
         <script>
         $('.button-collapse').sideNav({
-            menuWidth: 240, // Default is 240
+            menuWidth: 250, // Default is 240
             edge: 'left', // Choose the horizontal origin
             closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
         });
@@ -55,12 +57,13 @@
         </script>
 
  <!--*******************SIDE NAVIGATOR PANEL********************************************* -->
-    <div class="col s10 push-s2 teal accent-2">
+    <div class="col s10 push-s2 grey darken-4">
     @yield('title1')
-    <div class="col s10 push-s1 white hoverable" style="height: 100%;">
-    @yield('supplier')
-    @yield('accounts')
-    @yield('category')
+    <div class="col s10 push-s1 white hoverable">
+        @yield('supplier')
+        @yield('accounts')
+        @yield('category')
+        @yield('items')
     </div>
     </div>
     </div>

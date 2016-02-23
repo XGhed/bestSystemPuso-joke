@@ -6,7 +6,7 @@ Manage Supplier
 @endsection
 
 @section('title1')
-<h1 class="left col s3 push-s1">Manage Supplier</h1>
+<h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Supplier</h1>
 @endsection
 
 
@@ -130,7 +130,9 @@ Manage Supplier
     </form>  
         </div> <!--MODAL BODY-->
 </div>
-    
+      
+<div>
+
         <!-- DATA TABLE -->
         <table class="highlight responsive-table">
         <thead>
@@ -161,6 +163,7 @@ Manage Supplier
             </form>
         </tbody>
       </table>
+</div>
 <!-- ***************************************************EDIT**************************************-->
 
     <!-- Modal Structure -->

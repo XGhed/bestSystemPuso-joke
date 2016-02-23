@@ -27,7 +27,7 @@ Route::get('/insertMember', 'PageController@insertMember');
 
 Route::get('/home', 'PageController@homepage');
 
-Route::get('/items', 'PageController@manageItems');
+Route::get('/item', 'PageController@manageItem');
 
 Route::get('/supplier', 'SupplierController@manageSuppliers');
 

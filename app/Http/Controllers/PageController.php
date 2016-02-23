@@ -18,11 +18,6 @@ class PageController extends Controller
        return view('homepage');
     }
 
-    public function manageItems(Request $request){
-
-       return view('items');
-    }
-
     public function manageAccounts(Request $request){
 
        return view('accounts');
@@ -31,6 +26,11 @@ class PageController extends Controller
     public function manageCategory(Request $request){
 
        return view('category');
+    } 
+
+    public function manageItem(Request $request){
+
+       return view('item');
     } 
 
     public function addMember(Request $request){

@@ -6,7 +6,7 @@ Manage Category
 @endsection
 
 @section('title1')
-<h2 class="left col s3 push-s1">Manage Category</h2>
+<h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Category and Subcategories</h2>
 @endsection
 
 
@@ -83,6 +83,7 @@ Manage Category
 
 	<!--***************************************************END SUBCATEGORY **************************************-->
 </div>
+
 
 	<!--***************************************************DATA TABLE **************************************-->
 <div class="row">
