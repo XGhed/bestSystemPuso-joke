@@ -39,8 +39,14 @@ Route::get('/insertMember', 'PageController@insertMember');
 
 Route::get('/home', 'PageController@homepage');
 
+Route::get('/deliveryParty', 'PageController@deliveryParty');
+
+Route::get('/deliveryCompany', 'PageController@deliveryCompany');
+
 Route::get('/item', 'PageController@manageItem');
 
+
+Route::get('/accountType', 'PageController@accType');
 
 
 Route::get('/registerItem', 'PageController@regItems');

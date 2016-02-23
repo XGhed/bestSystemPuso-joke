@@ -21,12 +21,27 @@ class PageController extends Controller
     public function manageAccounts(Request $request){
 
        return view('accounts');
-    }    
+    }   
+
+    public function accType(Request $request){
+
+       return view('accountType');
+    }  
 
     public function manageSupplier(Request $request){
 
        return view('supplier');
     } 
+
+    public function deliveryParty(Request $request){
+
+       return view('deliveryParty');
+    }
+
+    public function deliveryCompany(Request $request){
+
+       return view('deliveryCompany');
+    }
 
     public function manageCategory(Request $request){
 

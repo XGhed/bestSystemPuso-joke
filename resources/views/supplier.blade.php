@@ -11,13 +11,25 @@ Manage Supplier
   <?php
     if (isset($message)){
       if($message != null && $message == '1')
-        echo "<script>Materialize.toast('ADDED SUCCESSFULLY!', 10000)</script>";
+        echo "<script> 
+                var toastContent = $('<span>RECORD ADDED!</span>');
+                Materialize.toast(toastContent, 5000, 'add');
+              </script>";
       elseif($message != null && $message == '2')
-        echo "<p style='color:green;'>Edit Successfull!</p>";
+        echo "<script> 
+                var toastContent = $('<span>RECORD EDITED!</span>');
+                Materialize.toast(toastContent, 5000, 'edit');
+              </script>";
       elseif($message != null && $message == '3')
-        echo "<p style='color:green;'>Delete Successfull!</p>";
+        echo "<script> 
+                var toastContent = $('<span>RECORD DELETED!</span>');
+                Materialize.toast(toastContent, 5000, 'delete');
+              </script>";
       elseif($message != null && $message == '-1')
-        echo "<p style='color:red;'>Error!</p>";
+        echo "<script> 
+                var toastContent = $('<span>ERROR!</span>');
+                Materialize.toast(toastContent, 5000, 'delete');
+              </script>";
     }
   ?>
 

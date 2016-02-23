@@ -7907,6 +7907,7 @@ small {
 .toast {
   border-radius: 2px;
   top: 0;
+  right: 400px;/*BINAGO KO LANG TO*/
   width: auto;
   clear: both;
   margin-top: 10px;
@@ -7932,6 +7933,8 @@ small {
           justify-content: space-between;
 }
 
+/**/
+
 .toast .btn, .toast .btn-large, .toast .btn-flat {
   margin: 0;
   margin-left: 3rem;
@@ -7940,6 +7943,20 @@ small {
 .toast.rounded {
   border-radius: 24px;
 }
+
+/************ DINAGDAG KO LANG TO **********/
+.toast.add {
+   background-color: #4CAF50;
+}
+
+.toast.edit {
+   background-color: #2196F3;
+}
+
+.toast.delete {
+    background-color: #F44336;
+}
+
 
 @media only screen and (max-width: 600px) {
   .toast {
