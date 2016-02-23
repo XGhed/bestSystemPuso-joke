@@ -23,6 +23,11 @@ class PageController extends Controller
        return view('accounts');
     }    
 
+    public function manageSupplier(Request $request){
+
+       return view('supplier');
+    } 
+
     public function manageCategory(Request $request){
 
        return view('category');
