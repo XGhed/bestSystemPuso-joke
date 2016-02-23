@@ -7907,10 +7907,10 @@ small {
 .toast {
   border-radius: 2px;
   top: 0;
-  right: 400px;/*BINAGO KO LANG TO*/
+  right: 400px; /*DINAGDAG KO LANG*/
   width: auto;
   clear: both;
-  margin-top: 10px;
+  margin-top: 55px;
   position: relative;
   max-width: 100%;
   height: auto;
@@ -7931,6 +7931,7 @@ small {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 
 /**/

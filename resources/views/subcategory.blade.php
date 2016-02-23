@@ -130,8 +130,7 @@ Manage Subcategory
     <!--*************************************************** END PAGINATION **************************************--> 
     
     <!--*************************************************** EDIT ************************************************-->
-    	
-		<a class="modal-trigger waves-effect waves-light btn" href="#modal3">EDIT MODAL //LIPAT MO NA LANG SA RADIO</a>
+   
 		  
 		  <div id="modal3" class="modal modal-fixed-footer">
 		    <div class="modal-content">
@@ -141,7 +140,7 @@ Manage Subcategory
 		      		
 			     		<div class="row">
 			     			<div class="input-field col s6 pull-s1">
-							    <input id="new_cat" type="text" class="validate" readonly name="edit_old_cat" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->CategoryName : 'None'}}">
+							    <input id="new_cat" type="text" class="validate disabled" " readonly name="edit_old_cat" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->CategoryName : 'None'}}">
 				          		<label for="new_cat">Category</label>
 							  </div>
 						</div>
@@ -170,10 +169,11 @@ Manage Subcategory
 
 
 		    <div class="modal-footer">
-		      <button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="edit">
-                	<i class="material-icons left">done</i>Change</button>
-                <button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="delete">
-                	<i class="material-icons left">done</i>Delete</button></form>	
+		      <button class="btn-flat green waves-effect waves-light white-text col s2" type="submit" name="edit">
+                <i class="material-icons left">edit</i>Change</button>
+
+                <button class="btn-flat red waves-effect waves-light white-text col s2" type="submit" name="delete">Delete
+            <i class="material-icons left">delete</i></button></form> 
 		    </div>
 		  </div>
     <!--*************************************************** END EDIT ************************************************-->  

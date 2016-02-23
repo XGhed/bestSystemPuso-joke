@@ -271,10 +271,10 @@ Manage Supplier
           </div> <!--*************************** MODAL CONTENT ***************************-->
 
           <div class="modal-footer">
-                <button class="btn waves-effect waves-light green darken-2 white-text col s2" type="submit" name="edit">
+                <button class="btn-flat green waves-effect waves-light white-text col s2" type="submit" name="edit">
                 <i class="material-icons left">edit</i>Change</button>
 
-                <button class="btn waves-effect waves-light z-depth-5 col s2" type="submit" name="delete">Delete
+                <button class="btn-flat red waves-effect waves-light white-text col s2" type="submit" name="delete">Delete
             <i class="material-icons left">delete</i>
           </button>
           </div>

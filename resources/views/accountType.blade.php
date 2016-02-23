@@ -93,8 +93,11 @@ Manage Account Type
 
 
 		    <div class="modal-footer">
-		      <button class="modal-action modal-close white-text waves-effect waves-green btn-flat green" type="submit" name="edit"><i class="material-icons left">done</i>Change</button>
-              <button class="modal-action modal-close white-text waves-effect waves-green btn-flat red" type="submit" name="delete"><i class="material-icons left">done</i>Delete</button>
+		      <button class="btn-flat green waves-effect waves-light white-text col s2" type="submit" name="edit">
+                <i class="material-icons left">edit</i>Change</button>
+
+                <button class="btn-flat red waves-effect waves-light white-text col s2" type="submit" name="delete">Delete
+            <i class="material-icons left">delete</i></button>
         </form>	
 		    </div>
 		  </div>
