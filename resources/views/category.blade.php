@@ -26,18 +26,18 @@ Manage Category
 			      <h4><i class="medium material-icons left">dns</i>Add Category</h4>
 			      			<div class="divider"></div>
 			        <div class="row">
-					    <form class="col s12">
+					    <form class="col s12" action="/confirmCategory" method="POST">
 						    <div class="row">
 						       	<div class="input-field col s5">
-						        	<input id="category" type="text" class="validate">
+						        	<input id="category" type="text" class="validate" name="add_name">
 						         	<label for="category">Category</label>
 						        </div>
 						    </div>
-					    </form>
 					</div>
 			    </div>
 			    <div class="modal-footer">
-			      <a href="#!" class="modal-action modal-close waves-effect waves-green btn "><i class="material-icons left">done</i>Confirm</a>
+			      <button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="add">
+                	<i class="material-icons left">done</i>Add</button></form>
 			    </div>
 			  </div>
 	</div>
@@ -59,34 +59,20 @@ Manage Category
         </thead>
 
         <tbody>
-          <tr>
-          	<td>
-          		<input name="group1" type="radio" id="test1" value="" onclick=""/>
-                 <label for="test1" class="left">Edit</label>
-            </td>
-            <td>Cat</td>
-            <td>Subcat1,Subcat2,Subcat3</td>
-          </tr>
-          <tr>
-          	<td>
-          		<input name="group1" type="radio" id="test2" value="" onclick=""/>
-                 <label for="test2" class="left">Edit</label>
-            </td>
-            <td>Dog</td>
-            <td>
-            	<p>Subcat1</p>
-            	<p>Subcat2</p>
-            	<p>Subcat3</p>
-            </td>
-          </tr>
-          <tr>
-          	<td>
-          		<input name="group1" type="radio" id="test3" value="" onclick=""/>
-                 <label for="test3" class="left">Edit</label>
-            </td>
-            <td>Mouse</td>
-            <td>Subcat1</td>
-          </tr>
+        	@foreach($results as $key => $result)
+	            <tr>
+	          	<td>
+	          		<input name="group1" type="radio" id="test{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
+	                 <label for="test{{$key}}" class="left">Edit</label>
+	            </td>
+	            <td>{{$result->CategoryName}}</td>
+	            <td>
+	            	@foreach($result->subCategory as $key2 => $subResult)
+	            		{{$subResult->SubCategoryName}},&nbsp;
+	            	@endforeach
+	            </td>
+	          </tr>
+         	@endforeach
         </tbody>
       </table>
 </div>
@@ -115,22 +101,25 @@ Manage Category
 		      <h4><i class="medium material-icons left">edit</i>Edit</h4>
 		      							<div class="divider"></div>
 		     		<div class="row">
-					    <form class="col s12">
+					    <form class="col s12" action="/confirmCategory" method="POST">
+					    	<input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->CategoryID : 'None'}}">
 						    <div class="row">
 						       	<div class="input-field col s5">
-						        	<input id="category" type="text" class="validate">
+						        	<input id="category" type="text" class="validate" name="edit_name" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->CategoryName : 'None'}}">
 						         	<label for="category">Category</label>
 						        </div>
 						    </div>
-					    </form>
 					</div>
 		    </div>
 
 
 		    <div class="modal-footer">
-		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn"><i class="medium material-icons left">done</i>Change</a>
-		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn"><i class="medium material-icons left">delete</i>Delete</a>
+		    	<button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="edit">
+                	<i class="material-icons left">done</i>Change</button></form>
+                <button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="delete">
+                	<i class="material-icons left">done</i>Delete</button></form>
 		    </div>
+		    </form>
 		  </div>
     <!--*************************************************** END EDIT ************************************************-->  
 
@@ -146,4 +135,13 @@ Manage Category
 			    $('select').material_select();
 			  });
 			</script>
+
+		<script>
+        function myJavascriptFunction(keyVal) { 
+          //var keyVal = document.querySelector('input[name="group1"]:checked').value;
+          var javascriptVariable = keyVal;
+          window.location.href = "category?keyID=" + javascriptVariable; 
+        }
+      	</script>
+      	<?php if (isset($_GET['keyID'])) echo "<script>$('#modal3').openModal();</script>";?>
 @endsection

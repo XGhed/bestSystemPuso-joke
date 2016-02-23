@@ -21,7 +21,6 @@ Route::post('/confirmSupplier', 'SupplierController@confirmSupplier');
 
 Route::post('/confirmCategory', 'CategoryController@confirmCategory');
 
-
 Route::get('/category', 'CategoryController@manageCategory');
 
 
@@ -35,7 +34,7 @@ Route::get('/home', 'PageController@homepage');
 Route::get('/item', 'PageController@manageItem');
 
 
-Route::get('/supplier', 'SupplierController@manageSupplier');
+Route::get('/supplier', 'SupplierController@manageSuppliers');
 
 Route::get('/registerItem', 'PageController@regItems');
 
