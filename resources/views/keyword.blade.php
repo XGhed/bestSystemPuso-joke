@@ -7,31 +7,6 @@ Manage keyword
 
 @section('title1')
 <h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage keyword</h2>
-
-<?php
-    if (isset($message)){
-      if($message != null && $message == '1')
-        echo "<script> 
-                var toastContent = $('<span>RECORD ADDED!</span>');
-                Materialize.toast(toastContent, 5000, 'add');
-              </script>";
-      elseif($message != null && $message == '2')
-        echo "<script> 
-                var toastContent = $('<span>RECORD EDITED!</span>');
-                Materialize.toast(toastContent, 5000, 'edit');
-              </script>";
-      elseif($message != null && $message == '3')
-        echo "<script> 
-                var toastContent = $('<span>RECORD DELETED!</span>');
-                Materialize.toast(toastContent, 5000, 'delete');
-              </script>";
-      elseif($message != null && $message == '-1')
-        echo "<script> 
-                var toastContent = $('<span>ERROR!</span>');
-                Materialize.toast(toastContent, 5000, 'delete');
-              </script>";
-    }
-  ?>
 @endsection
 
 
@@ -50,10 +25,10 @@ Manage keyword
             <h4><i class="medium material-icons left">label</i>Add Keyword</h4>
                   <div class="divider"></div>
               <div class="row">
-              <form class="col s12" action="" method="">
+              <form class="col s12" action="/confirmKeyword" method="POST">
                <div class="input-field col s6">
-                  <input id="keyword" type="text" class="validate">
-                  <label for="keyword">Edit Keyword</label>
+                  <input id="keyword" type="text" class="validate" name="add_name">
+                  <label for="keyword">Keyword</label>
                 </div>
 
           </div>
@@ -81,13 +56,15 @@ Manage keyword
         </thead>
 
         <tbody>
-              <tr>
+          @foreach($results as $key => $result)
+            <tr>
               <td>
-                <input name="group1" type="radio" id="" value="" onclick=""/>
-                   <label for="" class="left">Edit</label>
+                <input name="group1" type="radio" id="addID{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
+                   <label for="addID{{$key}}" class="left">Edit</label>
               </td>
-              <td>SusiSalita</td>
-            </tr>
+            <td>{{$result->KeywordName}}</td>
+             </tr>
+          @endforeach
         </tbody>
       </table>
 </div>
@@ -116,8 +93,9 @@ Manage keyword
           <h4><i class="medium material-icons left">edit</i>Edit</h4>
                         <div class="divider"></div>
             <form>
+                <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->KeywordID : 'None'}}">
                 <div class="input-field col s6">
-                  <input id="Place" type="text" class="validate">
+                  <input id="Place" type="text" class="validate" name="edit_name" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->KeywordName : 'None'}}">
                   <label for="Place">Edit Keyword</label>
                 </div>
         </div>
@@ -145,4 +123,12 @@ Manage keyword
           $('select').material_select();
         });
       </script>
+      <script>
+        function myJavascriptFunction(keyVal) { 
+          //var keyVal = document.querySelector('input[name="group1"]:checked').value;
+          var javascriptVariable = keyVal;
+          window.location.href = "category?keyID=" + javascriptVariable; 
+        }
+      </script>
+      <?php if (isset($_GET['keyID'])) echo "<script>$('#modal3').openModal();</script>";?>
 @endsection

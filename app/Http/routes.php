@@ -27,6 +27,8 @@ Route::post('/confirmDelivery3rdParty', 'Delivery3rdPartyController@confirmDeliv
 
 Route::post('/confirmAccountType', 'AccountTypeController@confirmAccountType');
 
+Route::post('/confirmKeyword', 'KeywordController@confirmKeyword');
+
 
 Route::get('/supplier', 'SupplierController@manageSupplier');
 
@@ -38,14 +40,14 @@ Route::get('/deliveryParty', 'Delivery3rdPartyController@manageDelivery3rdParty'
 
 Route::get('/accountType', 'AccountTypeController@manageAccountType');
 
+Route::get('/keyword', 'KeywordController@ManageKeyword');
+
 
 Route::get('/registerItem', 'PageController@regItems');		//ILIPAT KAPAG MAY ITEM CONTROLLER NA
 
 
 
 Route::get('/registration', 'PageController@registration');
-
-Route::get('/keyword', 'PageController@keyword');
 
 Route::get('/paymentMethod', 'PageController@paymentMethod');
 
