@@ -21,7 +21,7 @@
                 <!-- admin info-->
               <div class="grey darken-3">
               <center> <img class="circle responsive-img z-depth-3" src="icons/1x1.jpg"></center>
-              <center> Hello Sir!</center>
+              <center class="white-text"> Hello Nigguh!!!!</center>
               </div>
 
         <li class="no-padding">
@@ -34,7 +34,10 @@
                   <li><a class="white-text" href="/supplier">Supplier</a></li>
                   <li><a class="white-text" href="/category" >Category</a></li>
                   <li><a class="white-text" href="/subcategory" >Subcategory</a></li>
-                  <li><a class="white-text" href="/item">Item</a></li>
+                  <!-- <li><a class="white-text" href="/item">Item</a></li>-->
+                  <li><a class="white-text" href="/accountType">Account Type</a></li>
+                  <li><a class="white-text" href="/deliveryCompany">Company Delivery</a></li>
+                  <li><a class="white-text" href="/deliveryParty">3rd Party Delivery</a></li>
                   <div class="divider"></div>
                 </ul>
               </div>
@@ -69,6 +72,9 @@
         @yield('items')
         @yield('regItems')
         @yield('bidEvent')
+        @yield('accountType')
+        @yield('deliveryParty')
+        @yield('deliveryCompany')
     </div>
     </div>
     </div>

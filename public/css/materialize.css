@@ -7907,9 +7907,10 @@ small {
 .toast {
   border-radius: 2px;
   top: 0;
+  right: 400px; /*DINAGDAG KO LANG*/
   width: auto;
   clear: both;
-  margin-top: 10px;
+  margin-top: 55px;
   position: relative;
   max-width: 100%;
   height: auto;
@@ -7930,7 +7931,10 @@ small {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
+
+/**/
 
 .toast .btn, .toast .btn-large, .toast .btn-flat {
   margin: 0;
@@ -7940,6 +7944,20 @@ small {
 .toast.rounded {
   border-radius: 24px;
 }
+
+/************ DINAGDAG KO LANG TO **********/
+.toast.add {
+   background-color: #4CAF50;
+}
+
+.toast.edit {
+   background-color: #2196F3;
+}
+
+.toast.delete {
+    background-color: #F44336;
+}
+
 
 @media only screen and (max-width: 600px) {
   .toast {

@@ -35,6 +35,11 @@ Route::get('/registerItem', 'PageController@regItems');		//ILIPAT KAPAG MAY ITEM
 
 
 
+Route::get('/registration', 'PageController@registration');
+
+
+Route::get('/category', 'CategoryController@manageCategory');
+
 
 Route::post('/addMember', 'PageController@addMember');
 
@@ -42,8 +47,14 @@ Route::get('/insertMember', 'PageController@insertMember');
 
 Route::get('/home', 'PageController@homepage');
 
+Route::get('/deliveryParty', 'PageController@deliveryParty');
+
+Route::get('/deliveryCompany', 'PageController@deliveryCompany');
+
 Route::get('/item', 'PageController@manageItem');
 
+
+Route::get('/accountType', 'PageController@accType');
 
 
 Route::get('/registerItem', 'PageController@regItems');

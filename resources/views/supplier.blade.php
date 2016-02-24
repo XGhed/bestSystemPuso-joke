@@ -11,13 +11,25 @@ Manage Supplier
   <?php
     if (isset($message)){
       if($message != null && $message == '1')
-        echo "<script>Materialize.toast('ADDED SUCCESSFULLY!', 10000)</script>";
+        echo "<script> 
+                var toastContent = $('<span>RECORD ADDED!</span>');
+                Materialize.toast(toastContent, 5000, 'add');
+              </script>";
       elseif($message != null && $message == '2')
-        echo "<p style='color:green;'>Edit Successfull!</p>";
+        echo "<script> 
+                var toastContent = $('<span>RECORD EDITED!</span>');
+                Materialize.toast(toastContent, 5000, 'edit');
+              </script>";
       elseif($message != null && $message == '3')
-        echo "<p style='color:green;'>Delete Successfull!</p>";
+        echo "<script> 
+                var toastContent = $('<span>RECORD DELETED!</span>');
+                Materialize.toast(toastContent, 5000, 'delete');
+              </script>";
       elseif($message != null && $message == '-1')
-        echo "<p style='color:red;'>Error!</p>";
+        echo "<script> 
+                var toastContent = $('<span>ERROR!</span>');
+                Materialize.toast(toastContent, 5000, 'delete');
+              </script>";
     }
   ?>
 
@@ -259,10 +271,10 @@ Manage Supplier
           </div> <!--*************************** MODAL CONTENT ***************************-->
 
           <div class="modal-footer">
-                <button class="btn waves-effect waves-light green darken-2 white-text col s2" type="submit" name="edit">
+                <button class="btn-flat green waves-effect waves-light white-text col s2" type="submit" name="edit">
                 <i class="material-icons left">edit</i>Change</button>
 
-                <button class="btn waves-effect waves-light z-depth-5 col s2" type="submit" name="delete">Delete
+                <button class="btn-flat red waves-effect waves-light white-text col s2" type="submit" name="delete">Delete
             <i class="material-icons left">delete</i>
           </button>
           </div>

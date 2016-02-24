@@ -7,6 +7,31 @@ Manage Category
 
 @section('title1')
 <h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Category</h2>
+
+<?php
+    if (isset($message)){
+      if($message != null && $message == '1')
+        echo "<script> 
+                var toastContent = $('<span>RECORD ADDED!</span>');
+                Materialize.toast(toastContent, 5000, 'add');
+              </script>";
+      elseif($message != null && $message == '2')
+        echo "<script> 
+                var toastContent = $('<span>RECORD EDITED!</span>');
+                Materialize.toast(toastContent, 5000, 'edit');
+              </script>";
+      elseif($message != null && $message == '3')
+        echo "<script> 
+                var toastContent = $('<span>RECORD DELETED!</span>');
+                Materialize.toast(toastContent, 5000, 'delete');
+              </script>";
+      elseif($message != null && $message == '-1')
+        echo "<script> 
+                var toastContent = $('<span>ERROR!</span>');
+                Materialize.toast(toastContent, 5000, 'delete');
+              </script>";
+    }
+  ?>
 @endsection
 
 
@@ -112,10 +137,11 @@ Manage Category
 
 
 		    <div class="modal-footer">
-		    	<button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="edit">
-                	<i class="material-icons left">done</i>Change</button>
-                <button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="delete">
-                	<i class="material-icons left">done</i>Delete</button>
+		    	<button class="btn-flat green waves-effect waves-light white-text col s2" type="submit" name="edit">
+                <i class="material-icons left">edit</i>Change</button>
+
+                <button class="btn-flat red waves-effect waves-light white-text col s2" type="submit" name="delete">Delete
+            <i class="material-icons left">delete</i></button></form> 
 		    </div>
 		    </form>
 		  </div>
