@@ -158,7 +158,7 @@ Manage Supplier
                   <label for="test{{$key}}" class="left">Edit</label>
               </td>
               <td>{{$result->SupplierName}}</td>
-              <td>{{$result->Province_Address}}</td>
+              <td>{{$result->Province_Address}},&nbsp; {{$result->City_Address}},&nbsp; {{$result->Barangay_Address}},&nbsp {{$result->Street_Address}}</td>
               <td>{{$result->SupplierContactNo}}</td>
               <td>{{$result->SupplierEmail}}</td>
             </tr>
