@@ -32,6 +32,11 @@ Route::get('/subcategory', 'SubCategoryController@manageSubcategory');
 
 
 
+Route::get('/registration', 'PageController@registration');
+
+
+Route::get('/category', 'CategoryController@manageCategory');
+
 
 Route::post('/addMember', 'PageController@addMember');
 

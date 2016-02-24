@@ -18,6 +18,11 @@ class PageController extends Controller
        return view('homepage');
     }
 
+    public function registration(Request $request){
+
+       return view('registration');
+    }
+
     public function manageAccounts(Request $request){
 
        return view('accounts');
