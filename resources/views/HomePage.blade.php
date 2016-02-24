@@ -40,8 +40,8 @@
                 </div>
 
                   <div class="row">
-                    <div class="col s6 push-s3">
-                        <button class="btn light-blue accent-2 waves-effect waves-light" type="submit" name="action">Log In</button>
+                    <div class="col s7 push-s3">
+                       <a href="/supplier"><button class="btn green waves-effect waves-light" type="submit" name="action">Log In</button></a>
                     </div>
                  </div>
               </ul>

@@ -27,7 +27,7 @@
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a class="white-text collapsible-header">Maintenance<i class="mdi-navigation-arrow-drop-down right"></i></a>
+              <a class="white-text collapsible-header"><i class="material-icons">build</i>Maintenance<i class="tiny material-icons right">arrow_drop_down</i></a>
               <div class="collapsible-body">
                   <div class="divider"></div>
                 <ul>
@@ -46,17 +46,17 @@
             </li>
           </ul>
         </li>       
-        <li><a class="white-text" href="/registerItem">Register Items</a></li>
-        <li><a class="white-text" href="/bidEvent">Bidding Event</a></li>
-        <li><a class="white-text" href="#!">Reports</a></li>
-        <li><a class="right white-text" href="#!">Log out</a></li>
+        <li><a class="white-text collapsible-header" href="/registerItem"><i class="material-icons">input</i>Register Items</a></li>
+        <li><a class="white-text collapsible-header" href="/bidEvent"><i class="material-icons">gavel</i>Bidding Event</a></li>
+        <li><a class="white-text collapsible-header" href="#!"><i class="material-icons">receipt</i>Reports</a></li>
+        <li><a class="right white-text collapsible-header" href="/home"><i class="material-icons">exit_to_app</i>Log out</a></li>
       </ul>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="large mdi-navigation-menu"></i></a>
+      <a href="#" data-activates="slide-out" class="button-collapse "><i class="large mdi-navigation-menu"></i></a>
     
 
         <script>
         $('.button-collapse').sideNav({
-            menuWidth: 250, // Default is 240
+            menuWidth: 280, // Default is 240
             edge: 'left', // Choose the horizontal origin
             closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
         });
