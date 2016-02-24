@@ -50,10 +50,10 @@ Manage Delivery
             <h4><i class="medium material-icons left">local_shipping</i>Add 3rd Party Company</h4>
                   <div class="divider"></div>
               <div class="row">
-              <form class="col s12" action="" method="">
+              <form class="col s12" action="/confirmDelivery3rdParty" method="POST">
                 <div class="row">
                     <div class="input-field col s5">
-                      <input id="partyDelivery" type="text" class="validate" name="">
+                      <input id="partyDelivery" type="text" class="validate" name="add_name">
                       <label for="partyDelivery">Company Name</label>
                     </div>
                 </div>
@@ -82,14 +82,16 @@ Manage Delivery
         </thead>
 
         <tbody>
+              @foreach($results as $key => $result)
+                {{$result->SubCategoryName}}
               <tr>
-              <td>
-                <input name="group1" type="radio" id="" value="" onclick=""/>
-                   <label for="" class="left">Edit</label>
-              </td>
-              <td>asdfsadf</td>
-              
-            </tr>
+                <td>
+                  <input name="group1" type="radio" id="partyID{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
+                   <label for="partyID{{$key}}" class="left">Edit</label>
+                </td>
+                <td>{{$result->Delivery_3rdPartyName}}</td>
+              </tr>
+              @endforeach
         </tbody>
       </table>
 </div>
@@ -117,9 +119,10 @@ Manage Delivery
         <div class="modal-content">
           <h4><i class="medium material-icons left">edit</i>Edit</h4>
                         <div class="divider"></div>
-            <form>
+            <form action="/confirm3rdPartyDelivery" method="POST">
+                <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Delivery_3rdPartyID : 'None'}}">
                 <div class="input-field col s6">
-                  <input id="new_sub" type="text" class="validate">
+                  <input id="new_sub" type="text" class="validate" name="edit_name" <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->Delivery_3rdPartyName : 'None'}}">>
                   <label for="new_sub">Company Name</label>
                 </div>
         </div>
@@ -147,4 +150,12 @@ Manage Delivery
           $('select').material_select();
         });
       </script>
+      <script>
+        function myJavascriptFunction(keyVal) { 
+        //var keyVal = document.querySelector('input[name="group1"]:checked').value;
+        var javascriptVariable = keyVal;
+        window.location.href = "deliveryParty?keyID=" + javascriptVariable; 
+      }
+      </script>
+      <?php if (isset($_GET['keyID'])) echo "<script>$('#modal3').openModal();</script>";?>
 @endsection

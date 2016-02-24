@@ -64,6 +64,30 @@
  <!--*******************SIDE NAVIGATOR PANEL********************************************* -->
     <div class="col s10 push-s2 grey darken-4">
     @yield('title1')
+    <?php
+    if (isset($message)){
+        if($message != null && $message == '1')
+          echo "<script> 
+                  var toastContent = $('<span>RECORD ADDED!</span>');
+                  Materialize.toast(toastContent, 5000, 'add');
+                </script>";
+        elseif($message != null && $message == '2')
+          echo "<script> 
+                  var toastContent = $('<span>RECORD EDITED!</span>');
+                  Materialize.toast(toastContent, 5000, 'edit');
+                </script>";
+        elseif($message != null && $message == '3')
+          echo "<script> 
+                  var toastContent = $('<span>RECORD DELETED!</span>');
+                  Materialize.toast(toastContent, 5000, 'delete');
+                </script>";
+        elseif($message != null && $message == '-1')
+          echo "<script> 
+                  var toastContent = $('<span>ERROR!</span>');
+                  Materialize.toast(toastContent, 5000, 'delete');
+                </script>";
+      }
+    ?>
     <div class="col s10 push-s1 white hoverable">
         @yield('supplier')
         @yield('accounts')

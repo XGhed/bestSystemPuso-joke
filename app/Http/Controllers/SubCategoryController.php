@@ -62,4 +62,15 @@ class SubCategoryController extends Controller
 			return view('subcategory')->with ('results', $results)->with ('message', '-1');
 		}
 	}
+
+	public function deleteSubCategory(Request $request){
+		$subcategory = new App\SubCategory;
+		$subcategory = App\SubCategory::find($request->input('edit_old_subcat'));
+		
+		try {
+			$subcategory->delete();
+		} catch (Exception $e) {
+			return view('subcategory')->with ('results', $results)->with ('message', '-1');
+		}
+	}
 }

@@ -7,34 +7,6 @@ Manage Supplier
 
 @section('title1')
 <h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Supplier</h1>
-
-  <?php
-    if (isset($message)){
-      if($message != null && $message == '1')
-        echo "<script> 
-                var toastContent = $('<span>RECORD ADDED!</span>');
-                Materialize.toast(toastContent, 5000, 'add');
-              </script>";
-      elseif($message != null && $message == '2')
-        echo "<script> 
-                var toastContent = $('<span>RECORD EDITED!</span>');
-                Materialize.toast(toastContent, 5000, 'edit');
-              </script>";
-      elseif($message != null && $message == '3')
-        echo "<script> 
-                var toastContent = $('<span>RECORD DELETED!</span>');
-                Materialize.toast(toastContent, 5000, 'delete');
-              </script>";
-      elseif($message != null && $message == '-1')
-        echo "<script> 
-                var toastContent = $('<span>ERROR!</span>');
-                Materialize.toast(toastContent, 5000, 'delete');
-              </script>";
-    }
-  ?>
-
-  
-
 @endsection
 
 
@@ -296,13 +268,7 @@ Manage Supplier
     <!-- hindi pa functtioning wala pang database-->
         <div class="center">
           <ul class="pagination">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!">4</a></li>
-            <li class="waves-effect"><a href="#!">5</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            {!! $results->links() !!}
           </ul>
         </div> 
 

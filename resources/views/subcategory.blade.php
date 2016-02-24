@@ -7,31 +7,6 @@ Manage Subcategory
 
 @section('title1')
 <h1 class="left col s6 push-s1 white-text" style="font-size: 45px">Manage Subcategory</h2>
-
-<?php
-    if (isset($message)){
-      if($message != null && $message == '1')
-        echo "<script> 
-                var toastContent = $('<span>RECORD ADDED!</span>');
-                Materialize.toast(toastContent, 5000, 'add');
-              </script>";
-      elseif($message != null && $message == '2')
-        echo "<script> 
-                var toastContent = $('<span>RECORD EDITED!</span>');
-                Materialize.toast(toastContent, 5000, 'edit');
-              </script>";
-      elseif($message != null && $message == '3')
-        echo "<script> 
-                var toastContent = $('<span>RECORD DELETED!</span>');
-                Materialize.toast(toastContent, 5000, 'delete');
-              </script>";
-      elseif($message != null && $message == '-1')
-        echo "<script> 
-                var toastContent = $('<span>ERROR!</span>');
-                Materialize.toast(toastContent, 5000, 'delete');
-              </script>";
-    }
-  ?>
 @endsection
 
 

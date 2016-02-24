@@ -23,12 +23,20 @@ Route::post('/confirmCategory', 'CategoryController@confirmCategory');
 
 Route::post('/confirmSubCategory', 'SubCategoryController@confirmSubCategory');
 
+Route::post('/confirmDelivery3rdParty', 'Delivery3rdPartyController@confirmDelivery3rdParty');
+
+Route::post('/confirmAccountType', 'AccountTypeController@confirmAccountType');
+
 
 Route::get('/supplier', 'SupplierController@manageSupplier');
 
 Route::get('/category', 'CategoryController@manageCategory');
 
 Route::get('/subcategory', 'SubCategoryController@manageSubcategory');
+
+Route::get('/deliveryParty', 'Delivery3rdPartyController@manageDelivery3rdParty');
+
+Route::get('/accountType', 'AccountTypeController@manageAccountType');
 
 
 Route::get('/registerItem', 'PageController@regItems');		//ILIPAT KAPAG MAY ITEM CONTROLLER NA
@@ -47,14 +55,10 @@ Route::get('/insertMember', 'PageController@insertMember');
 
 Route::get('/home', 'PageController@homepage');
 
-Route::get('/deliveryParty', 'PageController@deliveryParty');
-
 Route::get('/deliveryCompany', 'PageController@deliveryCompany');
 
 Route::get('/item', 'PageController@manageItem');
 
-
-Route::get('/accountType', 'PageController@accType');
 
 
 Route::get('/registerItem', 'PageController@regItems');

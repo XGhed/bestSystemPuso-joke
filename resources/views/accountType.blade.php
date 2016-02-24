@@ -25,16 +25,17 @@ Manage Account Type
       				<div class="divider"></div>
       				<br>
       				<br>
-      	<form class="red">
+      	<form class="red" action="/confirmAccountType" method="POST">
 	      	<div class="input-field col s6">
-	          <input id="acctype" type="text" class="validate">
+	          <input id="acctype" type="text" class="validate" name="add_name">
 	          <label for="acctype">Account Type</label>
 	        </div>			
       
     </div>
     <div class="modal-footer">
-   		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green"><i class="material-icons left">add</i>Add Account Type</a>
-   		<form>
+   		<button class="modal-action modal-close waves-effect waves-green btn " type="submit" name="add">
+                  <i class="material-icons left">done</i>Add</button>
+   		</form>
     </div>
   </div>
 </div>
@@ -50,27 +51,15 @@ Manage Account Type
         </thead>
 
         <tbody>
-          <tr>
-            <td>
-                <input type="radio" id="" value="" onclick=""/>
-                <label for="" class="left">Edit</label>
-            </td>
-            <td>RETAILER</td>
-          </tr>
-          <tr>
-            <td>
-                <input type="radio" id="" value="" onclick=""/>
-                <label for="" class="left">Edit</label>
-            </td>
-            <td>END-USER</td>
-          </tr>
-          <tr>
-            <td>
-                <input type="radio" id="" value="" onclick=""/>
-                <label for="" class="left">Edit</label>
-            </td>
-            <td>MEMBER(EXAMPLE LANG)</td>
-          </tr>
+          @foreach($results as $key => $result)
+              <tr>
+              <td>
+                <input name="group1" type="radio" id="test{{$key}}" value="{{$key}}" onclick="myJavascriptFunction(this.value);"/>
+                   <label for="test{{$key}}" class="left">Edit</label>
+              </td>
+              <td>{{$result->AccountTypeName}}</td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
 <!-- ***************************************** END DATA TABLE *****************************************-->
@@ -84,9 +73,10 @@ Manage Account Type
 		    <div class="modal-content">
 		      <h4><i class="medium material-icons left">edit</i>Edit</h4>
 		      							<div class="divider"></div>
-		      	<form>							
+		      	<form action="/confirmAccountType" method="POST">							
+            <input type="hidden" name="edit_ID" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->AccountTypeID : 'None'}}">
 						<div class="input-field col s6">
-				          <input id="new_sub" type="text" class="validate">
+				          <input id="new_sub" type="text" class="validate" name="edit_name" value="{{isset($_GET['keyID']) ? $results[$_GET['keyID']]->AccountTypeName : 'None'}}">
 				          <label for="new_sub">Account type</label>
 				        </div>
 		    </div>
@@ -127,6 +117,15 @@ Manage Account Type
     }
   );
 </script>
+
+<script>
+function myJavascriptFunction(keyVal) { 
+  //var keyVal = document.querySelector('input[name="group1"]:checked').value;
+  var javascriptVariable = keyVal;
+  window.location.href = "accountType?keyID=" + javascriptVariable; 
+}
+</script>
+<?php if (isset($_GET['keyID'])) echo "<script>$('#modal3').openModal();</script>";?>
 
 @endsection
 

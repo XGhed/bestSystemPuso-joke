@@ -15,7 +15,7 @@ class SupplierController extends Controller
 {
     public function manageSupplier(){
 
-       $results = App\Supplier::all();
+       $results = App\Supplier::paginate(6);
 
        return view('supplier')->with ('results', $results);
     }
