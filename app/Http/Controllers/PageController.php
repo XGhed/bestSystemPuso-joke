@@ -23,6 +23,16 @@ class PageController extends Controller
        return view('registration');
     }
 
+    public function paymentMethod(Request $request){
+
+       return view('modePayment');
+    }
+
+    public function keyword(Request $request){
+
+       return view('keyword');
+    }
+
     public function manageAccounts(Request $request){
 
        return view('accounts');

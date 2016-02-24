@@ -45,6 +45,10 @@ Route::get('/registerItem', 'PageController@regItems');		//ILIPAT KAPAG MAY ITEM
 
 Route::get('/registration', 'PageController@registration');
 
+Route::get('/keyword', 'PageController@keyword');
+
+Route::get('/paymentMethod', 'PageController@paymentMethod');
+
 
 Route::get('/category', 'CategoryController@manageCategory');
 

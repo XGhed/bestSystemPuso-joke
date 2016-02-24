@@ -265,7 +265,7 @@ Manage Supplier
       </div>
 
 
-    <!-- hindi pa functtioning wala pang database-->
+    <!--*************************************************** PAGINATION **************************************-->
         <div class="center">
           <ul class="pagination">
             {!! $results->links() !!}

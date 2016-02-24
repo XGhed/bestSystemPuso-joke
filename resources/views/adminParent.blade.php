@@ -34,8 +34,10 @@
                   <li><a class="white-text" href="/supplier">Supplier</a></li>
                   <li><a class="white-text" href="/category" >Category</a></li>
                   <li><a class="white-text" href="/subcategory" >Subcategory</a></li>
+                  <li><a class="white-text" href="/keyword">Keyword</a></li>
                   <!-- <li><a class="white-text" href="/item">Item</a></li>-->
                   <li><a class="white-text" href="/accountType">Account Type</a></li>
+                  <li><a class="white-text" href="/paymentMethod">Payment Method</a></li>
                   <li><a class="white-text" href="/deliveryCompany">Company Delivery</a></li>
                   <li><a class="white-text" href="/deliveryParty">3rd Party Delivery</a></li>
                   <div class="divider"></div>
@@ -99,6 +101,8 @@
         @yield('accountType')
         @yield('deliveryParty')
         @yield('deliveryCompany')
+        @yield('keyword')
+        @yield('modePayment')
     </div>
     </div>
     </div>
