@@ -31,6 +31,9 @@ Route::get('/category', 'CategoryController@manageCategory');
 Route::get('/subcategory', 'SubCategoryController@manageSubcategory');
 
 
+Route::get('/registerItem', 'PageController@regItems');		//ILIPAT KAPAG MAY ITEM CONTROLLER NA
+
+
 
 
 Route::post('/addMember', 'PageController@addMember');
