@@ -127,7 +127,7 @@ Manage keyword
         function myJavascriptFunction(keyVal) { 
           //var keyVal = document.querySelector('input[name="group1"]:checked').value;
           var javascriptVariable = keyVal;
-          window.location.href = "category?keyID=" + javascriptVariable; 
+          window.location.href = "keyword?keyID=" + javascriptVariable; 
         }
       </script>
       <?php if (isset($_GET['keyID'])) echo "<script>$('#modal3').openModal();</script>";?>
